@@ -1,8 +1,10 @@
-package com.shinro.shinrojp_android;
+package com.shinro.shinrojp_android.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.shinro.shinrojp_android.R;
 
 public class MainActivity extends AppCompatActivity {
 
