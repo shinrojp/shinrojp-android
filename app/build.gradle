@@ -44,4 +44,81 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //Implement Library
+
+    //Multidex
+    def multidex_version = "2.0.1"
+    implementation "androidx.multidex:multidex:$multidex_version"
+
+    //Paging
+    def paging_version = "2.1.1"
+    // For Kotlin use paging-runtime-ktx
+    implementation "androidx.paging:paging-runtime:$paging_version"
+    // alternatively - without Android dependencies for testing
+    // For Kotlin use paging-common-ktx
+    testImplementation "androidx.paging:paging-common:$paging_version"
+    // optional - RxJava support
+    // For Kotlin use paging-rxjava2-ktx
+    implementation "androidx.paging:paging-rxjava2:$paging_version"
+
+    //Retrofit
+    def retrofit_version = "2.7.1"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    def adapter_rxjava_version = "2.7.1"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$adapter_rxjava_version"
+    def logging_interceptor = "4.3.1"
+    implementation "com.squareup.okhttp3:logging-interceptor:$logging_interceptor"
+
+    //RX
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.17'
+    //implementation 'io.reactivex.rxjava2:rxkotlin:2.4.0'
+
+    //RecyclerView
+    def recycler_view_version = "1.2.0-alpha01"
+    implementation "androidx.recyclerview:recyclerview:$recycler_view_version"
+    // For control over item selection of both touch and mouse driven selection
+    implementation "androidx.recyclerview:recyclerview-selection:1.1.0-beta01"
+
+    //CardView
+    def card_view_version = "1.0.0"
+    implementation "androidx.cardview:cardview:$card_view_version"
+
+    //Swipe Refresh Layout
+    def swipe_refresh_layout_version = "1.0.0"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swipe_refresh_layout_version"
+
+    //Glide
+    def glide_version = "4.11.0"
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
+
+    //Butter Knife
+    def butter_knife_version = "10.2.1"
+    implementation "com.jakewharton:butterknife:$butter_knife_version"
+    annotationProcessor  "com.jakewharton:butterknife-compiler:$butter_knife_version"
+
+    //Navigation
+    def nav_version = "2.1.0"
+
+    // Java language implementation
+    implementation "androidx.navigation:navigation-fragment:$nav_version"
+    implementation "androidx.navigation:navigation-ui:$nav_version"
+    // Kotlin
+    //implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    //implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    //Google material design
+    def material_version = "1.0.0-alpha1"
+    implementation "com.google.android.material:material:$material_version"
+
+    //Gson
+    def gson_version = "2.8.6"
+    implementation "com.google.code.gson:gson:$gson_version"
+
+    //Timber Logger
+    def timber_version = "4.7.1"
+    implementation "com.jakewharton.timber:timber:$timber_version"
 }
