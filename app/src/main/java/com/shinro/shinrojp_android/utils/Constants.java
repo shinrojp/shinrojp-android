@@ -1,4 +1,4 @@
-package com.shinro.shinrojp_android.ultis;
+package com.shinro.shinrojp_android.utils;
 
 public class Constants {
 
