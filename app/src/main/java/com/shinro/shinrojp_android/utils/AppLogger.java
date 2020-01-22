@@ -1,8 +1,16 @@
 package com.shinro.shinrojp_android.utils;
 
+import com.shinro.shinrojp_android.BuildConfig;
+
 import timber.log.Timber;
 
 public class AppLogger {
+
+    public static void init() {
+        if(BuildConfig.DEBUG) {
+            Timber.plant(new Timber.DebugTree());
+        }
+    }
 
     public static void d(String s, Object...object) {
         Timber.d(s, object);
