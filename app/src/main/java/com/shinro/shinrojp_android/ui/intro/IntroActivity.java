@@ -2,35 +2,19 @@ package com.shinro.shinrojp_android.ui.intro;
 
 import android.os.Bundle;
 
-import com.shinro.shinrojp_android.R;
-import com.shinro.shinrojp_android.bases.BaseActivity;
+class IntroActivity extends BaseActivity implements IntroContract.View { //TODO: DON'T FORGET TO ADD THIS ACTIVITY TO THE MANIFEST FILE!!!
 
-//todo create BaseActivity and import to this class
-public class IntroActivity extends BaseActivity implements IntroContract.View {
-
-    IntroContract.Presenter mPresenter;
+    private IntroContract.Presenter mPresenter = new IntroPresenter(this);    // Presenter
 
     @Override
-    protected void onCreate(final Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_intro);
-        mPresenter = new IntroPresenter(this, this);
+        setContentView(R.layout.);  //TODO: create the layout and add it here
+        initView();
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        mPresenter.start();
+    private void initView() {
+
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        mPresenter.stop();
-    }
-
-    @Override
-    public void setPresenter(IntroContract.Presenter presenter) {
-        this.mPresenter = presenter;
-    }
 }
