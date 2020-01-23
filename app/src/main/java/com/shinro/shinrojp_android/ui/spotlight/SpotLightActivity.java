@@ -2,14 +2,17 @@ package com.shinro.shinrojp_android.ui.spotlight;
 
 import android.os.Bundle;
 
-class SpotLightActivity extends BaseActivity implements SpotLightContract.View { //TODO: DON'T FORGET TO ADD THIS ACTIVITY TO THE MANIFEST FILE!!!
+import com.shinro.shinrojp_android.R;
+import com.shinro.shinrojp_android.bases.BaseActivity;
+
+public class SpotLightActivity extends BaseActivity implements SpotLightContract.View {
 
     private SpotLightContract.Presenter mPresenter = new SpotLightPresenter(this);    // Presenter
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.);  //TODO: create the layout and add it here
+        setContentView(R.layout.spot_light_acitivty);
         initView();
     }
 

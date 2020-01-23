@@ -1,3 +1,26 @@
 <resources>
+    <!--App Common-->
     <string name="app_name">shinrojp_android</string>
+    <string name="image_description" />
+
+    <!--IntroActivity-->
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title"></string>
+    <string name="slide_1_desc"></string>
+
+    <string name="slide_2_title"></string>
+    <string name="slide_2_desc"></string>
+
+    <string name="slide_3_title"></string>
+    <string name="slide_3_desc"></string>
+
+    <string name="slide_4_title"></string>
+    <string name="slide_4_desc"></string>
+
+    <string name="play_again_desc"></string>
+    <string name="play_again"></string>
 </resources>
