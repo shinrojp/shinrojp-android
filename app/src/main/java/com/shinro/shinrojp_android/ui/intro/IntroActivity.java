@@ -17,7 +17,7 @@ import com.shinro.shinrojp_android.R;
 import com.shinro.shinrojp_android.adapters.IntroViewPagerAdapter;
 import com.shinro.shinrojp_android.bases.BaseActivity;
 import com.shinro.shinrojp_android.helpers.SharedPreferencesHelper;
-import com.shinro.shinrojp_android.ui.spotlight.SpotLightActivity;
+import com.shinro.shinrojp_android.ui.auth.AuthActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -46,7 +46,7 @@ public class IntroActivity extends BaseActivity implements IntroContract.View {
 
         if(!preferencesHelper.isFirstTimeLaunch()){
             preferencesHelper.setFirstTimeLaunch(false);
-            navigateActivity(SpotLightActivity.class);
+            navigateActivity(AuthActivity.class);
             finish();
         }
 
@@ -55,7 +55,7 @@ public class IntroActivity extends BaseActivity implements IntroContract.View {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         }
 
-        setContentView(R.layout.intro_activity);
+        setContentView(R.layout.activity_intro);
         initView();
 
         initIntroSlider();
@@ -69,14 +69,14 @@ public class IntroActivity extends BaseActivity implements IntroContract.View {
                 viewPager.setCurrentItem(current);
             } else {
                 preferencesHelper.setFirstTimeLaunch(false);
-                navigateActivity(SpotLightActivity.class);
+                navigateActivity(AuthActivity.class);
                 finish();
             }
         });
 
         btnSkip.setOnClickListener(view -> {
             preferencesHelper.setFirstTimeLaunch(false);
-            navigateActivity(SpotLightActivity.class);
+            navigateActivity(AuthActivity.class);
             finish();
         });
 
@@ -88,10 +88,10 @@ public class IntroActivity extends BaseActivity implements IntroContract.View {
 
     private void initIntroSlider() {
         layouts = new int[]{
-                R.layout.intro_slider_first_layout,
-                R.layout.intro_slider_second_layout,
-                R.layout.intro_slider_third_layout,
-                R.layout.intro_slider_fourth_layout};
+                R.layout.intro_slider_first,
+                R.layout.intro_slider_second,
+                R.layout.intro_slider_third,
+                R.layout.intro_slider_fourth};
     }
 
     private void addBottomDots(int currentPage) {

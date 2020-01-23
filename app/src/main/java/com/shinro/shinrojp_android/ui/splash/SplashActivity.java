@@ -17,7 +17,7 @@ public class SplashActivity extends BaseActivityFullScreen implements SplashCont
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         hideStatusBar();
-        setContentView(R.layout.splash_activity);
+        setContentView(R.layout.activity_splash);
         new Handler().postDelayed(() -> {
             navigateActivity(IntroActivity.class);
             finish();

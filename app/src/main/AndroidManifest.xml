@@ -14,7 +14,19 @@
         <activity
             android:name=".ui.spotlight.SpotLightActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/IntroTheme" />
+            android:theme="@style/SpotLightTheme" />
+        <activity
+            android:name=".ui.auth.register.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AuthTheme" />
+        <activity
+            android:name=".ui.auth.login.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AuthTheme" />
+        <activity
+            android:name=".ui.auth.AuthActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AuthTheme" />
         <activity
             android:name=".ui.intro.IntroActivity"
             android:screenOrientation="portrait"
