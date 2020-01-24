@@ -8,4 +8,8 @@ public class LoginPresenter implements LoginContract.Presenter {
         this.mView = mView;
     }
 
+    @Override
+    public void onLogin(String u, String p) {
+        mView.onLoginSuccess();
+    }
 }

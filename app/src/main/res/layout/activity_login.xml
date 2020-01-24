@@ -1,6 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_auth_background">
 
-</LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imvBack"
+                android:layout_width="21dp"
+                android:layout_height="25dp"
+                android:src="@drawable/back"
+                android:layout_margin="16dp"
+                android:contentDescription="@string/image_description" />
+
+            <com.shinro.shinrojp_android.views.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/auth_tv_login"
+                android:textSize="22sp"
+                android:textColor="#fff"
+                android:layout_marginLeft="16dp"
+                android:layout_margin="16dp"
+                android:layout_marginStart="16dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@drawable/signin"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <com.shinro.shinrojp_android.views.CustomEditText
+                android:textSize="16sp"
+                android:id="@+id/edtUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/auth_edt_username"
+                android:textColorHint="@color/signin_text"
+                android:textColor="@color/signin_text"
+                android:layout_marginLeft="60dp"
+                android:inputType="text"
+                android:background="#0000"
+                android:padding="16dp"
+                android:maxLength="20"
+                android:drawableLeft="@drawable/user"
+                android:drawablePadding="35dp"
+                android:layout_marginRight="65dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:layout_height="1dp"
+                android:background="@color/signin_text" />
+
+            <com.shinro.shinrojp_android.views.CustomEditText
+                android:textSize="16sp"
+                android:id="@+id/edtPassword"
+                android:drawablePadding="38dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/auth_edt_password"
+                android:textColorHint="@color/signin_text"
+                android:textColor="@color/signin_text"
+                android:layout_marginLeft="60dp"
+                android:inputType="textPassword"
+                android:background="#0000"
+                android:maxLength="8"
+                android:padding="16dp"
+                android:drawableLeft="@drawable/password"
+                android:layout_marginRight="65dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:layout_height="1dp"
+                android:background="@color/signin_text"
+                android:layout_marginBottom="63dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.shinro.shinrojp_android.views.CustomTextView
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rect"
+        android:text="@string/auth_tv_login"
+        android:textSize="20sp"
+        android:textColor="#3b4a45"
+        android:gravity="center"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:padding="13dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="18dp" />
+
+</RelativeLayout>

@@ -104,6 +104,12 @@ public class BaseActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    protected void navigateActivity(Class classname, int option) {
+        Intent intent = new Intent(this, classname);
+        intent.setFlags(option);
+        startActivity(intent);
+    }
+
     protected void navigateActivityForResult(Class classname, int request_code) {
         Intent intent = new Intent(this, classname);
         startActivityForResult(intent, request_code);

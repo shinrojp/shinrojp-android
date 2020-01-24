@@ -8,4 +8,8 @@ public class RegisterPresenter implements RegisterContract.Presenter {
         this.mView = mView;
     }
 
+    @Override
+    public void onRegister(String u, String e, String p) {
+        mView.onRegisterSuccess();
+    }
 }

@@ -4,6 +4,11 @@ import android.os.Bundle;
 
 import com.shinro.shinrojp_android.R;
 import com.shinro.shinrojp_android.bases.BaseActivity;
+import com.shinro.shinrojp_android.ui.auth.login.LoginActivity;
+import com.shinro.shinrojp_android.ui.auth.register.RegisterActivity;
+
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class AuthActivity extends BaseActivity {
 
@@ -14,8 +19,22 @@ public class AuthActivity extends BaseActivity {
         initView();
     }
 
-    private void initView() {
-
+    @OnClick(R.id.tvLogin)
+    protected void navigateLogin(){
+        navigateActivity(LoginActivity.class);
+        finish();
     }
+
+    @OnClick(R.id.tvRegister)
+    protected void navigateRegister(){
+        navigateActivity(RegisterActivity.class);
+        finish();
+    }
+
+    private void initView() {
+        ButterKnife.bind(this);
+    }
+
+
 
 }
