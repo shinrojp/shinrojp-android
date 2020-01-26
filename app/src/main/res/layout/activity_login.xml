@@ -20,7 +20,7 @@
                 android:id="@+id/imvBack"
                 android:layout_width="21dp"
                 android:layout_height="25dp"
-                android:src="@drawable/back"
+                android:src="@drawable/ic_auth_back"
                 android:layout_margin="16dp"
                 android:contentDescription="@string/image_description" />
 
@@ -37,7 +37,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:background="@drawable/signin"
+            android:background="@drawable/ic_auth_signin"
             android:layout_weight="1"
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -57,7 +57,7 @@
                 android:background="#0000"
                 android:padding="16dp"
                 android:maxLength="20"
-                android:drawableLeft="@drawable/user"
+                android:drawableLeft="@drawable/ic_auth_user"
                 android:drawablePadding="35dp"
                 android:layout_marginRight="65dp"/>
 
@@ -82,7 +82,7 @@
                 android:background="#0000"
                 android:maxLength="8"
                 android:padding="16dp"
-                android:drawableLeft="@drawable/password"
+                android:drawableLeft="@drawable/ic_auth_password"
                 android:layout_marginRight="65dp"/>
 
             <View
@@ -101,7 +101,7 @@
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/rect"
+        android:background="@drawable/ic_auth_rect"
         android:text="@string/auth_tv_login"
         android:textSize="20sp"
         android:textColor="#3b4a45"

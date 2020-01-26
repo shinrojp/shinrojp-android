@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import com.shinro.shinrojp_android.R;
 import com.shinro.shinrojp_android.bases.BaseActivity;
 import com.shinro.shinrojp_android.ui.auth.AuthActivity;
-import com.shinro.shinrojp_android.ui.spotlight.SpotLightActivity;
+import com.shinro.shinrojp_android.ui.home.HomeActivity;
 import com.shinro.shinrojp_android.views.CustomEditText;
 import com.shinro.shinrojp_android.views.CustomTextView;
 
@@ -67,7 +67,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View, V
 
     @Override
     public void onLoginSuccess() {
-        navigateActivity(SpotLightActivity.class);
+        navigateActivity(HomeActivity.class);
         finish();
     }
 

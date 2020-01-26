@@ -26,7 +26,6 @@ public class CustomTextView extends TextView {
         init();
     }
 
-    @SuppressLint("NewApi")
     public CustomTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         init();

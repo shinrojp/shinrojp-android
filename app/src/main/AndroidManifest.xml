@@ -12,9 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.spotlight.SpotLightActivity"
+            android:name=".ui.home.HomeActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/SpotLightTheme" />
+            android:theme="@style/HomeTheme" />
         <activity
             android:name=".ui.auth.register.RegisterActivity"
             android:screenOrientation="portrait"

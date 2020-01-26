@@ -25,7 +25,6 @@ public class CustomEditText extends EditText {
         init();
     }
 
-    @SuppressLint("NewApi")
     public CustomEditText(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         init();

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/nav_learn"
+        android:icon="@drawable/ic_home_learn"
+        android:title="Learn" />
+
+    <item
+        android:id="@+id/nav_quiz"
+        android:icon="@drawable/ic_home_quiz"
+        android:title="Quiz" />
+
+    <item
+        android:id="@+id/nav_user"
+        android:icon="@drawable/ic_home_account"
+        android:title="Account"/>
+
+</menu>
