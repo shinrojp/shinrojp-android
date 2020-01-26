@@ -1,4 +1,4 @@
-package com.shinro.shinrojp_android.utils;
+package com.shinro.shinrojp_android.utils.RecyclerViewUtils;
 
 import android.view.View;
 
