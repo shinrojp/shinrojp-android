@@ -16,6 +16,10 @@ public class MainApplication extends Application {
         return mSelf;
     }
 
+    public Gson getGson() {
+        return mGson;
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();

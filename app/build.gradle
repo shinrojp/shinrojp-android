@@ -17,12 +17,14 @@ android {
             debuggable true
             minifyEnabled false
             shrinkResources false
+            buildConfigField("String", "BASE_URL", BASE_URL)
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
             debuggable true
             minifyEnabled false
             shrinkResources false
+            buildConfigField("String", "BASE_URL", BASE_URL)
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
