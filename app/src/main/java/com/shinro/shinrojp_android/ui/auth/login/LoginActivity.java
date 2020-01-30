@@ -9,6 +9,7 @@ import com.shinro.shinrojp_android.R;
 import com.shinro.shinrojp_android.bases.BaseActivity;
 import com.shinro.shinrojp_android.ui.auth.AuthActivity;
 import com.shinro.shinrojp_android.ui.home.HomeActivity;
+import com.shinro.shinrojp_android.utils.CommonUtils;
 import com.shinro.shinrojp_android.views.CustomEditText;
 import com.shinro.shinrojp_android.views.CustomTextView;
 
@@ -35,6 +36,13 @@ public class LoginActivity extends BaseActivity implements LoginContract.View, V
         edtUsername = findViewById(R.id.edtUsername);
         edtPassword = findViewById(R.id.edtPassword);
         btnLogin = findViewById(R.id.btnLogin);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        CommonUtils.hideKeyBoardOnBlur(edtUsername);
+        CommonUtils.hideKeyBoardOnBlur(edtPassword);
     }
 
     @Override

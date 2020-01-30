@@ -11,34 +11,28 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
 
-    public static Retrofit getClient(String baseUrl, boolean isAuthorization, String token) {
-        OkHttpClient httpClient = new OkHttpClient.Builder().addInterceptor((Interceptor) chain -> {
-            Request original = chain.request();
-            if(isAuthorization && !token.trim().isEmpty()) {
-                Request.Builder builder = original.newBuilder()
-                                            .header("Authorization", "Bearer " + token)
-                                            .method(original.method(), original.body());
-                Request request = builder.build();
-                chain.proceed(request);
-            } else {
-                Request.Builder builder = original.newBuilder().method(original.method(), original.body());
-                Request request = builder.build();
-                chain.proceed(request);
-            }
-        })
-                Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl(baseUrl)
-                        .addConverterFactory(GsonConverterFactory.create(new MainApplication().self().getGson()))
-                        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                        .client(httpClient)
-                        .build();
-        return retrofit;
-
-
-
-
-
-
-    }
-
+//    public static Retrofit getClient(String baseUrl, boolean isAuthorization, String token) {
+//        OkHttpClient httpClient = new OkHttpClient.Builder().addInterceptor((Interceptor) chain -> {
+//            Request original = chain.request();
+//            if(isAuthorization && !token.trim().isEmpty()) {
+//                Request.Builder builder = original.newBuilder()
+//                                            .header("Authorization", "Bearer " + token)
+//                                            .method(original.method(), original.body());
+//                Request request = builder.build();
+//                chain.proceed(request);
+//            } else {
+//                Request.Builder builder = original.newBuilder().method(original.method(), original.body());
+//                Request request = builder.build();
+//                chain.proceed(request);
+//            }
+//        })
+//                Retrofit retrofit = new Retrofit.Builder()
+//                        .baseUrl(baseUrl)
+//                        .addConverterFactory(GsonConverterFactory.create(new MainApplication().self().getGson()))
+//                        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+//                        .client(httpClient)
+//                        .build();
+//        return retrofit;
+//
+//    }
 }

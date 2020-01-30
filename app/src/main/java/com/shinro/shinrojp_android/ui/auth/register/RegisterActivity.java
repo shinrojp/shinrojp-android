@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import com.shinro.shinrojp_android.R;
 import com.shinro.shinrojp_android.bases.BaseActivity;
 import com.shinro.shinrojp_android.ui.auth.AuthActivity;
+import com.shinro.shinrojp_android.utils.CommonUtils;
 import com.shinro.shinrojp_android.views.CustomEditText;
 import com.shinro.shinrojp_android.views.CustomTextView;
 
@@ -36,6 +37,14 @@ public class RegisterActivity extends BaseActivity implements RegisterContract.V
         edtEmail = findViewById(R.id.edtEmail);
         edtPassword = findViewById(R.id.edtPassword);
         btnRegister = findViewById(R.id.btnRegister);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        CommonUtils.hideKeyBoardOnBlur(edtUsername);
+        CommonUtils.hideKeyBoardOnBlur(edtEmail);
+        CommonUtils.hideKeyBoardOnBlur(edtPassword);
     }
 
     @Override

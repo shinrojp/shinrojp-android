@@ -22,7 +22,8 @@
         <activity
             android:name=".ui.auth.login.LoginActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AuthTheme" />
+            android:theme="@style/AuthTheme"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
         <activity
             android:name=".ui.auth.AuthActivity"
             android:screenOrientation="portrait"

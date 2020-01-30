@@ -42,6 +42,6 @@
     <!--AuthActivity-->
     <color name="color_text">#e1e5ee</color>
     <color name="color_devider">#cfc391</color>
-    <color name="signin_text">#cfc391</color>
+    <color name="color_hint">#cfc391</color>
 
 </resources>
