@@ -37,11 +37,6 @@
                 android:layout_marginStart="16dp"
                 android:layout_margin="16dp"/>
 
-            <com.google.android.material.textview.MaterialTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
-
         </LinearLayout>
 
         <LinearLayout
@@ -58,7 +53,6 @@
                 app:errorEnabled="true"
                 app:counterEnabled="true"
                 app:counterMaxLength="20"
-                app:passwordToggleEnabled="true"
                 app:hintEnabled="true"
                 app:hintAnimationEnabled="true"
                 app:counterTextAppearance="@style/AuthTheme.CounterText"
@@ -78,7 +72,7 @@
                     android:maxLength="20"
                     android:padding="16dp"
                     android:drawableStart="@drawable/ic_auth_user"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:drawablePadding="35dp"
                     android:layout_marginStart="36dp"/>
 
@@ -90,7 +84,6 @@
                 app:errorEnabled="true"
                 app:counterEnabled="true"
                 app:counterMaxLength="20"
-                app:passwordToggleEnabled="true"
                 app:hintEnabled="true"
                 app:hintAnimationEnabled="true"
                 app:counterTextAppearance="@style/AuthTheme.CounterText"
@@ -109,7 +102,7 @@
                     android:background="#0000"
                     android:padding="16dp"
                     android:drawableStart="@drawable/ic_auth_email"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:drawablePadding="35dp"
                     android:layout_marginStart="36dp"/>
 
@@ -121,7 +114,6 @@
                 app:errorEnabled="true"
                 app:counterEnabled="true"
                 app:counterMaxLength="10"
-                app:passwordToggleEnabled="true"
                 app:hintEnabled="true"
                 app:hintAnimationEnabled="true"
                 app:counterTextAppearance="@style/AuthTheme.CounterText"
@@ -141,7 +133,7 @@
                     android:background="#0000"
                     android:padding="16dp"
                     android:drawableStart="@drawable/ic_auth_password"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_marginStart="36dp"/>
 
             </com.google.android.material.textfield.TextInputLayout>

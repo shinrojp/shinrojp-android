@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/drawer_nav_feed"
+            android:icon="@drawable/ic_home_feed"
+            android:title="Feed" />
+
+        <item
+            android:id="@+id/drawer_nav_learn"
+            android:icon="@drawable/ic_home_learn"
+            android:title="Lesson" />
+
+        <item
+            android:id="@+id/drawer_nav_quiz"
+            android:icon="@drawable/ic_home_quiz"
+            android:title="Quiz" />
+
+    </group>
+
+    <item android:title="Function">
+
+        <menu>
+
+            <group android:checkableBehavior="none">
+
+                <item
+                    android:id="@+id/drawer_nav_user"
+                    android:icon="@drawable/ic_home_account"
+
+                    android:title="User"/>
+
+            </group>
+
+        </menu>
+
+    </item>
+
+</menu>

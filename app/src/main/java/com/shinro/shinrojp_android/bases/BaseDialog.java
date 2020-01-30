@@ -1,22 +1,24 @@
 package com.shinro.shinrojp_android.bases;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 
+import androidx.appcompat.app.AlertDialog;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.shinro.shinrojp_android.utils.AppLogger;
 
 public class BaseDialog {
 
     private Context mContext;
 
-    private AlertDialog.Builder dialogBuilder;
+    private MaterialAlertDialogBuilder dialogBuilder;
 
     private AlertDialog dialog;
 
     public BaseDialog(Context mContext) {
         this.mContext = mContext;
-        dialogBuilder = new AlertDialog.Builder(mContext);
+        dialogBuilder = new MaterialAlertDialogBuilder(mContext);
     }
 
     /**
@@ -103,7 +105,7 @@ public class BaseDialog {
     /**
      * Show
      */
-    protected AlertDialog showDialog() {
+    protected androidx.appcompat.app.AlertDialog showDialog() {
         try {
             dialog = dialogBuilder.show();
             return dialog;

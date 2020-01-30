@@ -1,10 +1,7 @@
 package com.shinro.shinrojp_android.ui.home;
 
 import android.os.Bundle;
-import android.view.MenuItem;
-import android.widget.FrameLayout;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -27,7 +24,7 @@ public class HomeActivity extends BaseActivity implements HomeContract.View {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_home_container);
         initView();
         initFirstFragment();
     }
@@ -45,16 +42,16 @@ public class HomeActivity extends BaseActivity implements HomeContract.View {
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = menuItem -> {
         Fragment fragment = null;
         switch (menuItem.getItemId()) {
-            case R.id.nav_feed:
+            case R.id.bottom_nav_feed:
                 fragment = new FeedFragment();
                 break;
-            case R.id.nav_learn:
+            case R.id.bottom_nav_learn:
                 fragment = new LessonFragment();
                 break;
-            case R.id.nav_quiz:
+            case R.id.bottom_nav_quiz:
                 fragment = new QuizFragment();
                 break;
-            case R.id.nav_user:
+            case R.id.bottom_nav_user:
                 fragment = new UserFragment();
                 break;
             default:

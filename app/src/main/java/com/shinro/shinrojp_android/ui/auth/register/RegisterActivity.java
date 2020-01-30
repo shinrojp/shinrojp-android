@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.shinro.shinrojp_android.R;
 import com.shinro.shinrojp_android.bases.BaseActivity;
 import com.shinro.shinrojp_android.ui.auth.AuthActivity;
