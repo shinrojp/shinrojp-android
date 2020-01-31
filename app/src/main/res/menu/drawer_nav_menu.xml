@@ -4,22 +4,22 @@
         <item
             android:id="@+id/drawer_nav_note"
             android:icon="@drawable/ic_home_feed"
-            android:title="Memo" />
+            android:title="@string/drawer_nav_menu_note" />
         <item
             android:id="@+id/drawer_nav_about"
             android:icon="@drawable/ic_home_learn"
-            android:title="About" />
+            android:title="@string/drawer_nav_menu_about" />
         <item
             android:id="@+id/drawer_nav_feedback"
             android:icon="@drawable/ic_home_quiz"
-            android:title="Feedback" />
+            android:title="@string/drawer_nav_menu_feedback" />
     </group>
-    <item android:title="Function">
+    <item android:title="@string/drawer_nav_menu_sub_title">
         <menu>
             <item
                 android:id="@+id/drawer_nav_sign_out"
                 android:icon="@drawable/ic_home_account"
-                android:title="Sign out"/>
+                android:title="@string/drawer_nav_menu_sign_out"/>
         </menu>
     </item>
 </menu>

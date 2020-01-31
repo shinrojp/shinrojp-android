@@ -3,13 +3,13 @@
     <item
         android:id="@+id/bottom_nav_feed"
         android:icon="@drawable/ic_home_feed"
-        android:title="Feed"/>
+        android:title="@string/bottom_nav_menu_feed"/>
     <item
         android:id="@+id/bottom_nav_learn"
         android:icon="@drawable/ic_home_learn"
-        android:title="Learn" />
+        android:title="@string/bottom_nav_menu_learn"/>
     <item
         android:id="@+id/bottom_nav_quiz"
         android:icon="@drawable/ic_home_quiz"
-        android:title="Quiz" />
+        android:title="@string/bottom_nav_menu_quiz" />
 </menu>

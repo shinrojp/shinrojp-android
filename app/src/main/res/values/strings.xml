@@ -7,6 +7,14 @@
     <!--HomeActivity-->
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
+    <string name="bottom_nav_menu_feed">Feed</string>
+    <string name="bottom_nav_menu_learn">Learn</string>
+    <string name="bottom_nav_menu_quiz">Quiz</string>
+    <string name="drawer_nav_menu_sub_title">Communication</string>
+    <string name="drawer_nav_menu_sign_out">Sign out</string>
+    <string name="drawer_nav_menu_feedback">Feedback</string>
+    <string name="drawer_nav_menu_about">About</string>
+    <string name="drawer_nav_menu_note">Your Keep</string>
 
     <!--IntroActivity-->
     <string name="title_activity_welcome">Home Screen</string>
