@@ -24,3 +24,24 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    multidex_version = "2.0.1"
+    paging_version = "2.1.1"
+    retrofit_version = "2.7.1"
+    rxjava_version = "2.2.17"
+    rxandroid_version = "2.1.1"
+    adapter_rxjava_version = "2.7.1"
+    logging_interceptor = "4.3.1"
+    recycler_view_version = "1.2.0-alpha01"
+    card_view_version = "1.0.0"
+    swipe_refresh_layout_version = "1.0.0"
+    glide_version = "4.11.0"
+    butter_knife_version = "10.2.1"
+    nav_version = "2.1.0"
+    material_version = "1.2.0-alpha04"
+    gson_version = "2.8.6"
+    timber_version = "4.7.1"
+    room_version = "2.2.3"
+    circle_image_view_version = "3.1.0"
+}

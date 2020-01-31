@@ -2,6 +2,11 @@
     <!--App Common-->
     <string name="app_name">shinrojp_android</string>
     <string name="image_description" />
+    <string name="sample_email">namnt@newwave.vn</string>
+
+    <!--HomeActivity-->
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
 
     <!--IntroActivity-->
     <string name="title_activity_welcome">Home Screen</string>

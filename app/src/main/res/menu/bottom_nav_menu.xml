@@ -1,25 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/bottom_nav_feed"
         android:icon="@drawable/ic_home_feed"
         android:title="Feed"/>
-
     <item
         android:id="@+id/bottom_nav_learn"
         android:icon="@drawable/ic_home_learn"
         android:title="Learn" />
-
     <item
         android:id="@+id/bottom_nav_quiz"
         android:icon="@drawable/ic_home_quiz"
         android:title="Quiz" />
-
-    <item
-        android:id="@+id/bottom_nav_user"
-        android:icon="@drawable/ic_home_account"
-        android:title="Account"/>
-
 </menu>

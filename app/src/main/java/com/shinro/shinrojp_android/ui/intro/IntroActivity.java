@@ -30,11 +30,6 @@ public class IntroActivity extends BaseActivity implements IntroContract.View {
     @BindView(R.id.btn_next) Button btnNext;
     @BindView(R.id.btn_skip) Button btnSkip;
 
-    //Init IntroViewPagerAdapter
-    private IntroViewPagerAdapter adapter;
-    private SharedPreferencesHelper preferencesHelper;
-
-    private TextView[] dots;
     private int[] layouts;
 
     private IntroContract.Presenter mPresenter = new IntroPresenter(this);    // Presenter
@@ -42,7 +37,7 @@ public class IntroActivity extends BaseActivity implements IntroContract.View {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        preferencesHelper = SharedPreferencesHelper.getInstance(this);
+        SharedPreferencesHelper preferencesHelper = SharedPreferencesHelper.getInstance(this);
 
         if(!preferencesHelper.isFirstTimeLaunch()){
             preferencesHelper.setFirstTimeLaunch(false);
@@ -57,7 +52,6 @@ public class IntroActivity extends BaseActivity implements IntroContract.View {
 
         setContentView(R.layout.activity_intro);
         initView();
-
         initIntroSlider();
         addBottomDots(0);
         changeStatusBarColor();
@@ -84,6 +78,7 @@ public class IntroActivity extends BaseActivity implements IntroContract.View {
 
     private void initView() {
         ButterKnife.bind(this);
+        //Init IntroViewPagerAdapter
     }
 
     private void initIntroSlider() {
@@ -95,7 +90,7 @@ public class IntroActivity extends BaseActivity implements IntroContract.View {
     }
 
     private void addBottomDots(int currentPage) {
-        dots = new TextView[layouts.length];
+        TextView[] dots = new TextView[layouts.length];
 
         int[] colorsActive = getResources().getIntArray(R.array.array_dot_active);
         int[] colorsInactive = getResources().getIntArray(R.array.array_dot_inactive);
@@ -114,7 +109,7 @@ public class IntroActivity extends BaseActivity implements IntroContract.View {
     }
 
     private void initViewPager() {
-        adapter = new IntroViewPagerAdapter(layouts, this);
+        IntroViewPagerAdapter adapter = new IntroViewPagerAdapter(layouts, this);
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(initViewPagerPageChangeListener());
     }

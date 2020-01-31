@@ -1,41 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <group android:checkableBehavior="single">
-
         <item
-            android:id="@+id/drawer_nav_feed"
+            android:id="@+id/drawer_nav_note"
             android:icon="@drawable/ic_home_feed"
-            android:title="Feed" />
-
+            android:title="Memo" />
         <item
-            android:id="@+id/drawer_nav_learn"
+            android:id="@+id/drawer_nav_about"
             android:icon="@drawable/ic_home_learn"
-            android:title="Lesson" />
-
+            android:title="About" />
         <item
-            android:id="@+id/drawer_nav_quiz"
+            android:id="@+id/drawer_nav_feedback"
             android:icon="@drawable/ic_home_quiz"
-            android:title="Quiz" />
-
+            android:title="Feedback" />
     </group>
-
     <item android:title="Function">
-
         <menu>
-
-            <group android:checkableBehavior="none">
-
-                <item
-                    android:id="@+id/drawer_nav_user"
-                    android:icon="@drawable/ic_home_account"
-
-                    android:title="User"/>
-
-            </group>
-
+            <item
+                android:id="@+id/drawer_nav_sign_out"
+                android:icon="@drawable/ic_home_account"
+                android:title="Sign out"/>
         </menu>
-
     </item>
-
 </menu>
