@@ -120,4 +120,7 @@ dependencies {
     //CircleImageView
     implementation "de.hdodenhof:circleimageview:$rootProject.circle_image_view_version"
 
+    //About page
+    implementation "com.github.medyo:android-about-page:$rootProject.about_version"
+
 }

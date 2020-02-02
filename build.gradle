@@ -44,4 +44,5 @@ ext {
     timber_version = "4.7.1"
     room_version = "2.2.3"
     circle_image_view_version = "3.1.0"
+    about_version = "1.2.5"
 }

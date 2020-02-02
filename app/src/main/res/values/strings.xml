@@ -4,6 +4,9 @@
     <string name="image_description" />
     <string name="sample_email">namnt@newwave.vn</string>
 
+    <!--AboutFragment-->
+    <string name="copy_right">Copyrights © %1$d</string>
+
     <!--HomeActivity-->
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>

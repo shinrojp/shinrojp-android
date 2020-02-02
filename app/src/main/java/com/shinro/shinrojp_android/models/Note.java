@@ -22,6 +22,7 @@ public class Note {
     @ColumnInfo(name = "content")
     public String note_content;
 
+    @Ignore
     public Note() {}
 
     public Note(@NotNull int note_id, String note_title, String note_content) {

@@ -11,7 +11,7 @@ import com.shinro.shinrojp_android.models.Note;
 
 import static com.shinro.shinrojp_android.utils.Constants.DB_NAME;
 
-@Database(entities = {Note.class}, version = 1)
+@Database(entities = {Note.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static volatile AppDatabase INSTANCE;
