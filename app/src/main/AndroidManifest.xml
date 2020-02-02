@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ui.common.CommonActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CommonTheme"
+            android:parentActivityName=".ui.home.HomeActivity">
+            <meta-data
+                android:name="HomeActivity"
+                android:value=".ui.home.HomeActivity"/>
+        </activity>
+        <activity
             android:name=".ui.home.HomeActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HomeTheme" />

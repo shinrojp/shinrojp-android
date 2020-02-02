@@ -37,7 +37,6 @@ public class BaseActivity extends AppCompatActivity {
      * @param containerId R.id.
      * @param fragment fragment
      */
-
     protected void loadFragmentToContainer(int containerId, Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(containerId, fragment);
@@ -106,6 +105,13 @@ public class BaseActivity extends AppCompatActivity {
 
     protected void navigateActivity(Class classname, int option) {
         Intent intent = new Intent(this, classname);
+        intent.setFlags(option);
+        startActivity(intent);
+    }
+
+    protected void navigateActivity(Class classname, String k, int v, int option) {
+        Intent intent = new Intent(this, classname);
+        intent.putExtra(k, v);
         intent.setFlags(option);
         startActivity(intent);
     }

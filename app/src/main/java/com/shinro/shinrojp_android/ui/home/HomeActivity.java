@@ -1,5 +1,6 @@
 package com.shinro.shinrojp_android.ui.home;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -15,11 +16,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.shinro.shinrojp_android.R;
 import com.shinro.shinrojp_android.bases.BaseActivity;
-import com.shinro.shinrojp_android.ui.home.about.AboutFragment;
+import com.shinro.shinrojp_android.ui.common.CommonActivity;
 import com.shinro.shinrojp_android.ui.home.feed.FeedFragment;
-import com.shinro.shinrojp_android.ui.home.feedback.FeedbackFragment;
 import com.shinro.shinrojp_android.ui.home.lesson.LessonFragment;
-import com.shinro.shinrojp_android.ui.home.note.NoteFragment;
 import com.shinro.shinrojp_android.ui.home.quiz.QuizFragment;
 import com.shinro.shinrojp_android.ui.home.user.UserFragment;
 
@@ -36,6 +35,8 @@ public class HomeActivity extends BaseActivity implements HomeContract.View, Vie
     private CircleImageView civProfile;
     private View headerLayout;
     private ActionBarDrawerToggle drawerToggle;
+
+    private static final int option = Intent.FLAG_ACTIVITY_CLEAR_TOP;
 
     private HomeContract.Presenter mPresenter = new HomePresenter(this);    // Presenter
 
@@ -79,16 +80,18 @@ public class HomeActivity extends BaseActivity implements HomeContract.View, Vie
     }
 
     private void onSelectDrawerItem(MenuItem item) {
-        Fragment fragment = null;
         switch (item.getItemId()) {
             case R.id.drawer_nav_note:
-                fragment = new NoteFragment();
+                navigateActivity(CommonActivity.class, "type_fragment", 1, option);
+                break;
+            case R.id.drawer_nav_setting:
+                navigateActivity(CommonActivity.class, "type_fragment", 2, option);
                 break;
             case R.id.drawer_nav_feedback:
-                fragment = new FeedbackFragment();
+                navigateActivity(CommonActivity.class, "type_fragment", 3, option);
                 break;
             case R.id.drawer_nav_about:
-                fragment = new AboutFragment();
+                navigateActivity(CommonActivity.class, "type_fragment", 4, option);
                 break;
             case R.id.drawer_nav_sign_out:
                 System.exit(0);
@@ -96,8 +99,6 @@ public class HomeActivity extends BaseActivity implements HomeContract.View, Vie
             default:
                 break;
         }
-        loadFragmentToContainer(R.id.frameContainer, fragment);
-        setTitle(item.getTitle());
         drawer_layout.closeDrawers();
     }
 
