@@ -125,4 +125,7 @@ dependencies {
     //About page
     implementation "com.github.medyo:android-about-page:$rootProject.about_version"
 
+    //Slider Image
+    implementation "com.github.smarteist:autoimageslider:$rootProject.slider_image_version"
+
 }
