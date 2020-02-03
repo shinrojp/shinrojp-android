@@ -30,6 +30,7 @@ public class AboutFragment extends BaseFragment implements AboutContract.View {
         adsElement.setTitle("Advertise with us");
         View aboutPage = new AboutPage(getActivity())
                 .isRTL(false)
+                .setDescription(getString(R.string.about_description))
                 .setImage(R.mipmap.ic_launcher_round)
                 .addItem(new Element().setTitle("Version 1.0 alpha 1"))
                 .addItem(adsElement)

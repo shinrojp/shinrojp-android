@@ -24,7 +24,7 @@ public class BaseDialog {
     /**
      * Set title
      */
-    protected BaseDialog setTitle(int titleId) {
+    public BaseDialog setTitle(int titleId) {
         dialogBuilder.setTitle(titleId);
         return this;
     }
@@ -32,7 +32,7 @@ public class BaseDialog {
     /**
      * Set title
      */
-    protected BaseDialog setTitle(CharSequence title) {
+    public BaseDialog setTitle(CharSequence title) {
         if (title == null) {
             return this;
         }
@@ -43,7 +43,7 @@ public class BaseDialog {
     /**
      * Set message
      */
-    protected BaseDialog setMessage(int messageId) {
+    public BaseDialog setMessage(int messageId) {
         dialogBuilder.setMessage(messageId);
         return this;
     }
@@ -51,7 +51,7 @@ public class BaseDialog {
     /**
      * Set message
      */
-    protected BaseDialog setMessage(CharSequence message) {
+    public BaseDialog setMessage(CharSequence message) {
         if (message == null) {
             return this;
         }
@@ -62,7 +62,7 @@ public class BaseDialog {
     /**
      * Set Positive Button
      */
-    protected BaseDialog setPositiveButton(int textId, DialogInterface.OnClickListener listener) {
+    public BaseDialog setPositiveButton(int textId, DialogInterface.OnClickListener listener) {
         dialogBuilder.setPositiveButton(textId, listener);
         return this;
     }
@@ -70,7 +70,7 @@ public class BaseDialog {
     /**
      * Set Positive Button
      */
-    protected BaseDialog setPositiveButton(CharSequence text, DialogInterface.OnClickListener listener) {
+    public BaseDialog setPositiveButton(CharSequence text, DialogInterface.OnClickListener listener) {
         dialogBuilder.setPositiveButton(text, listener);
         return this;
     }
@@ -78,7 +78,7 @@ public class BaseDialog {
     /**
      * Set Negative Button
      */
-    protected BaseDialog setNegativeButton(int textId, DialogInterface.OnClickListener listener) {
+    public BaseDialog setNegativeButton(int textId, DialogInterface.OnClickListener listener) {
         dialogBuilder.setNegativeButton(textId, listener);
         return this;
     }
@@ -86,15 +86,31 @@ public class BaseDialog {
     /**
      * Set Negative Button
      */
-    protected BaseDialog setNegativeButton(CharSequence text, DialogInterface.OnClickListener listener) {
+    public BaseDialog setNegativeButton(CharSequence text, DialogInterface.OnClickListener listener) {
         dialogBuilder.setNegativeButton(text, listener);
+        return this;
+    }
+
+    /**
+     * Set Neutral Button
+     */
+    public BaseDialog setNeutralButton(int textId, DialogInterface.OnClickListener listener) {
+        dialogBuilder.setNeutralButton(textId, listener);
+        return this;
+    }
+
+    /**
+     * Set Neutral Button
+     */
+    public BaseDialog setNeutralButton(CharSequence text, DialogInterface.OnClickListener listener) {
+        dialogBuilder.setNeutralButton(text, listener);
         return this;
     }
 
     /**
      * Set Cancelable
      */
-    protected BaseDialog setCancelable(Boolean cancelable) {
+    public BaseDialog setCancelable(Boolean cancelable) {
         if (cancelable == null) {
             return this;
         }
@@ -105,7 +121,7 @@ public class BaseDialog {
     /**
      * Show
      */
-    protected androidx.appcompat.app.AlertDialog showDialog() {
+    public AlertDialog showDialog() {
         try {
             dialog = dialogBuilder.show();
             return dialog;
@@ -118,7 +134,7 @@ public class BaseDialog {
     /**
      * Dismiss
      */
-    protected void dismissDialog() {
+    public void dismissDialog() {
         try {
             dialog.dismiss();
         } catch (Exception e) {

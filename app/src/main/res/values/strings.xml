@@ -6,6 +6,23 @@
 
     <!--AboutFragment-->
     <string name="copy_right">Copyrights © %1$d</string>
+    <string name="about_description">Welcome to use our ShinroJP</string>
+
+    <!--FeedbackFragment-->
+    <string name="feedback_title">Rate for us !</string>
+    <string name="feedback_zero_start">Can you tell me more description about your experimental !</string>
+    <string name="feedback_one_start">That not what we expected !</string>
+    <string name="feedback_two_start">Hm... is anything wrong, tell us !</string>
+    <string name="feedback_three_start">It\'s good new</string>
+    <string name="feedback_four_start">It\'s awesome</string>
+    <string name="feedback_five_start">Thank you ! We looking forward to improve our production .</string>
+    <string name="feedback_subject">Thank you for your co-operation </string>
+    <string name="feedback_content">If there anything troubles when using our app, we are here to help you .</string>
+    <string name="feedback_dialog_title">Do you want to share us some opinions ?</string>
+    <string name="feedback_dialog_message">Just take some few minutes and tell us you experiences .</string>
+    <string name="feedback_dialog_positive_button">Yes, I\'m in</string>
+    <string name="feedback_dialog_neutral_button">Let me think !</string>
+    <string name="feedback_dialog_negative_button">No</string>
 
     <!--HomeActivity-->
     <string name="drawer_open">Open navigation drawer</string>
@@ -47,5 +64,6 @@
     <string name="auth_edt_password">Password</string>
     <string name="auth_edt_username">Username</string>
     <string name="auth_edt_email">Email</string>
+
 
 </resources>
