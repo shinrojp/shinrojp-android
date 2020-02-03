@@ -10,6 +10,10 @@ import androidx.annotation.Nullable;
 
 import com.shinro.shinrojp_android.R;
 import com.shinro.shinrojp_android.bases.BaseFragment;
+import com.shinro.shinrojp_android.models.NHKProgramList;
+import com.shinro.shinrojp_android.utils.AppLogger;
+
+import java.util.ArrayList;
 
 public class FeedFragment extends BaseFragment implements FeedContract.View {
 
@@ -30,4 +34,13 @@ public class FeedFragment extends BaseFragment implements FeedContract.View {
 
     }
 
+    @Override
+    public void onFetchProgramListSuccess(ArrayList<NHKProgramList> list) {
+
+    }
+
+    @Override
+    public void onFetchProgramListFail(Throwable throwable) {
+        AppLogger.e(throwable);
+    }
 }
