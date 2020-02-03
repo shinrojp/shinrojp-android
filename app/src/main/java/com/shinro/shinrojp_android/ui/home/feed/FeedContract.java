@@ -1,6 +1,6 @@
 package com.shinro.shinrojp_android.ui.home.feed;
 
-import com.shinro.shinrojp_android.models.NHKProgramList;
+import com.shinro.shinrojp_android.models.NHK.NHKProgramList;
 
 import java.util.ArrayList;
 

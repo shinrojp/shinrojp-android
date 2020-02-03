@@ -1,5 +1,5 @@
 
-package com.shinro.shinrojp_android.models;
+package com.shinro.shinrojp_android.models.NHK;
 
 import java.util.List;
 import com.google.gson.annotations.Expose;

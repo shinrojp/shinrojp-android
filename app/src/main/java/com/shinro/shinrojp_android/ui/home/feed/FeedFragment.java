@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 
 import com.shinro.shinrojp_android.R;
 import com.shinro.shinrojp_android.bases.BaseFragment;
-import com.shinro.shinrojp_android.models.NHKProgramList;
+import com.shinro.shinrojp_android.models.NHK.NHKProgramList;
 import com.shinro.shinrojp_android.utils.AppLogger;
 
 import java.util.ArrayList;

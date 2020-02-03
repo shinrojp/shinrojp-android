@@ -3,6 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.shinro.shinrojp_android">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".bases.MainApplication"
         android:usesCleartextTraffic="true"

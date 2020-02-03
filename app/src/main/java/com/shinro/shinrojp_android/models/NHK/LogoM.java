@@ -1,10 +1,10 @@
 
-package com.shinro.shinrojp_android.models;
+package com.shinro.shinrojp_android.models.NHK;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class LogoL {
+public class LogoM {
 
     @SerializedName("url")
     @Expose
