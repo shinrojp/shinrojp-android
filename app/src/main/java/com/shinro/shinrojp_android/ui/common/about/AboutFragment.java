@@ -37,12 +37,12 @@ public class AboutFragment extends BaseFragment implements AboutContract.View {
                 .addGroup("Connect with us")
                 .addEmail("shinrojp@gmail.com")
                 .addWebsite("https://shinrojp.github.io/shinrojp-android/")
-                .addFacebook("")
-                .addTwitter("")
-                .addYoutube("")
+                .addFacebook("https://www.facebook.com/shinrojp")
+                .addTwitter("https://twitter.com/shinrojp1")
+                .addYoutube("https://www.youtube.com/channel/UC1ld_J1c9SPVHv8jvFiUCeA?view_as=subscriber")
                 .addPlayStore("")
-                .addInstagram("")
-                .addGitHub("")
+                .addInstagram("https://www.instagram.com/shinrojp/")
+                .addGitHub("https://github.com/shinrojp")
                 .addItem(getCopyRightsElement())
                 .create();
         return aboutPage;
