@@ -128,4 +128,7 @@ dependencies {
     //Slider Image
     implementation "com.github.smarteist:autoimageslider:$rootProject.slider_image_version"
 
+    //FancyToast
+    implementation "com.github.Shashank02051997:FancyToast-Android:$rootProject.fancy_toast_version"
+
 }
