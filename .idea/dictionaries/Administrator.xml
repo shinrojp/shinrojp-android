@@ -2,6 +2,7 @@
   <dictionary name="Administrator">
     <words>
       <w>gson</w>
+      <w>shapeable</w>
     </words>
   </dictionary>
 </component>

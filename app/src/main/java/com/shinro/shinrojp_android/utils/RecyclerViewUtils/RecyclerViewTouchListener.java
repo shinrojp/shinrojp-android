@@ -58,7 +58,9 @@ public class RecyclerViewTouchListener implements RecyclerView.OnItemTouchListen
         if(child != null && recyclerViewClickListener != null && gestureDetector.onTouchEvent(motionEvent)){
             recyclerViewClickListener.onClick(child,recyclerView.getChildAdapterPosition(child));
         }
-
+        if(motionEvent.getAction() == MotionEvent.ACTION_DOWN && recyclerView.getScrollState() == RecyclerView.SCROLL_STATE_SETTLING) {
+            recyclerView.stopScroll();
+        }
         return false;
     }
 

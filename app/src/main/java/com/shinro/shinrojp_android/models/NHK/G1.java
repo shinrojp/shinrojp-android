@@ -5,7 +5,7 @@ import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class G1 {
+public class G1 implements Comparable{
 
     @SerializedName("id")
     @Expose
@@ -162,4 +162,12 @@ public class G1 {
         this.hashtags = hashtags;
     }
 
+    @Override
+    public int compareTo(Object o) {
+        G1 compare = (G1) o;
+        if(compare.id == this.id && compare.title.equals(this.title)) {
+            return 0;
+        }
+        return 1;
+    }
 }

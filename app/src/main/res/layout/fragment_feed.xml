@@ -1,42 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="10">
+    android:isScrollContainer="true"
+    android:fillViewport="true">
 
-    <com.google.android.material.card.MaterialCardView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3">
+        android:layout_height="wrap_content">
 
         <com.smarteist.autoimageslider.SliderView
+            android:id="@+id/imageSlider"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="200dp"
+            android:minHeight="200dp"
+            app:sliderAnimationDuration="600"
+            app:sliderAutoCycleDirection="back_and_forth"
+            app:sliderAutoCycleEnabled="true"
+            app:sliderCircularHandlerEnabled="true"
+            app:sliderIndicatorAnimationDuration="600"
+            app:sliderIndicatorGravity="center_horizontal|bottom"
+            app:sliderIndicatorMargin="15dp"
+            app:sliderIndicatorOrientation="horizontal"
+            app:sliderIndicatorPadding="3dp"
+            app:sliderIndicatorRadius="2dp"
+            app:sliderIndicatorSelectedColor="#5A5A5A"
+            app:sliderIndicatorUnselectedColor="#FFF"
+            app:sliderScrollTimeInSec="1"
+            app:sliderStartAutoCycle="true" />
 
-    </com.google.android.material.card.MaterialCardView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcvQuiz"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3"
-        android:layout_marginTop="16dp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvQuiz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="16dp" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvTip"
-        android:layout_width="match_parent"
-        android:layout_marginTop="16dp"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="aaaa"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="Hot Tip" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcvProgram"
-        android:layout_width="match_parent"
-        android:layout_marginTop="16dp"
-        android:layout_height="0dp"
-        android:layout_weight="2"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvProgram"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:padding="16dp" />
 
-</LinearLayout>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTip2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="Hot Tip2" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTip3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="Hot Tip3" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTip4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="Hot Tip4" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTip5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="Hot Tip5" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTip6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="Hot Tip6" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTip7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="Hot Tip7" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTip8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="Hot Tip8" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTip9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="Hot Tip9" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
+
+
+

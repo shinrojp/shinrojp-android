@@ -17,7 +17,7 @@ import com.bumptech.glide.request.target.Target;
 
 public class ImageViewUtils {
 
-    public void loadAvtar(Context context, ImageView view, String sourceImage, boolean hasDefaultImageAvatar, Priority priority) {
+    public static void loadAvatar(Context context, ImageView view, String sourceImage, boolean hasDefaultImageAvatar, Priority priority) {
         int defaultResourceImageAvatar = 0;
         try {
             if(hasDefaultImageAvatar) {
@@ -44,7 +44,7 @@ public class ImageViewUtils {
         }
     }
 
-    public void loadImage(Context context, ImageView view, String sourceImage, Priority priority) {
+    public static void loadImage(Context context, ImageView view, String sourceImage, Priority priority) {
         int defaultResourceImageAvatar = 0;
         try {
             Glide.with(context)
@@ -57,6 +57,45 @@ public class ImageViewUtils {
             AppLogger.e(e);
             try {
                 Glide.with(context).load(defaultResourceImageAvatar).priority(priority).into(view);
+            } catch (Exception e1) {
+                AppLogger.e(e1);
+            }
+        }
+    }
+
+    public static void loadImage(View view, ImageView imageView, String sourceImage, Priority priority) {
+        int defaultResourceImageAvatar = 0;
+        try {
+            Glide.with(view)
+                    .load(sourceImage)
+                    .priority(priority)
+                    .placeholder(defaultResourceImageAvatar)
+                    .error(defaultResourceImageAvatar)
+                    .into(imageView);
+        } catch (Exception e) {
+            AppLogger.e(e);
+            try {
+                Glide.with(view).load(defaultResourceImageAvatar).priority(priority).into(imageView);
+            } catch (Exception e1) {
+                AppLogger.e(e1);
+            }
+        }
+    }
+
+    public static void loadGifImage(View view, ImageView imageView, String sourceImage, Priority priority) {
+        int defaultResourceImageAvatar = 0;
+        try {
+            Glide.with(view)
+                    .asGif()
+                    .load(sourceImage)
+                    .priority(priority)
+                    .placeholder(defaultResourceImageAvatar)
+                    .error(defaultResourceImageAvatar)
+                    .into(imageView);
+        } catch (Exception e) {
+            AppLogger.e(e);
+            try {
+                Glide.with(view).load(defaultResourceImageAvatar).priority(priority).into(imageView);
             } catch (Exception e1) {
                 AppLogger.e(e1);
             }

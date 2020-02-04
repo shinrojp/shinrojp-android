@@ -1,6 +1,7 @@
 package com.shinro.shinrojp_android.ui.home.feed;
 
 import com.shinro.shinrojp_android.api.ApiUtil;
+import com.shinro.shinrojp_android.models.NHK.G1;
 import com.shinro.shinrojp_android.models.NHK.NHKProgramList;
 
 import java.util.ArrayList;
@@ -26,15 +27,15 @@ public class FeedPresenter implements FeedContract.Presenter {
         ApiUtil.getFeedApiService(false, null).fetchProgramList(current_date, NHK_API_KEY)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
-                .subscribe(new Observer<ArrayList<NHKProgramList>>() {
+                .subscribe(new Observer<NHKProgramList>() {
                     @Override
                     public void onSubscribe(Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(ArrayList<NHKProgramList> nhkProgramLists) {
-                        mView.onFetchProgramListSuccess(nhkProgramLists);
+                    public void onNext(NHKProgramList nhkProgramLists) {
+                        mView.onFetchProgramListSuccess(convertObject(nhkProgramLists));
                     }
 
                     @Override
@@ -49,5 +50,10 @@ public class FeedPresenter implements FeedContract.Presenter {
                 });
     }
 
-
+    private ArrayList<G1> convertObject(NHKProgramList model) {
+        if(model != null) {
+            return model.getList().getG1();
+        }
+        return null;
+    }
 }
