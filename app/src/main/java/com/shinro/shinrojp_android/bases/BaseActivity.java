@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.shashank.sony.fancytoastlib.FancyToast;
 import com.shinro.shinrojp_android.utils.ProgressDialogUtils;
 
 import io.reactivex.disposables.CompositeDisposable;
@@ -127,6 +128,43 @@ public class BaseActivity extends AppCompatActivity {
 
     protected void toastMessage(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    //FancyToast
+    protected void showToast(String message) {
+        FancyToast.makeText(this, message, FancyToast.LENGTH_SHORT, FancyToast.DEFAULT,true).show();
+    }
+
+    protected void showSuccessToast(String message) {
+        FancyToast.makeText(this, message ,FancyToast.LENGTH_SHORT, FancyToast.SUCCESS,true).show();
+    }
+
+    protected void showInfoToast(String message) {
+        FancyToast.makeText(this, message, FancyToast.LENGTH_SHORT, FancyToast.INFO,true).show();
+    }
+
+    protected void showWarningToast(String message) {
+        FancyToast.makeText(this, message, FancyToast.LENGTH_SHORT, FancyToast.WARNING,true).show();
+    }
+
+    protected void showErrorToast(String message) {
+        FancyToast.makeText(this, message, FancyToast.LENGTH_SHORT, FancyToast.ERROR,true).show();
+    }
+
+    protected void showConfusingToast(String message) {
+        FancyToast.makeText(this, message, FancyToast.LENGTH_SHORT, FancyToast.CONFUSING,true).show();
+    }
+
+    protected void showCustomToastWithParam(String message, int duration, int type, boolean icon) {
+        FancyToast.makeText(this, message, duration, type, icon).show();
+    }
+
+    protected void showCustomImageToastWithParam(String message, int duration, int type, int image, boolean icon) {
+        FancyToast.makeText(this, message, duration, type, image, icon).show();
+    }
+
+    protected void showCustomToastWithoutIcon(String message, int duration, int type, int image) {
+        FancyToast.makeText(this, message, duration, type, image, false);
     }
 
     protected void onShowLoading() {
