@@ -1,5 +1,7 @@
 package com.shinro.shinrojp_android.bases;
 
+import android.view.ViewGroup;
+
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -51,6 +53,23 @@ public class BaseFragment extends Fragment {
      */
     protected void addFragment(int containerId, Fragment fragment) {
         String backStateName = fragment.getClass().getName();
+        if(getActivity() != null) {
+            FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+            transaction.replace(containerId, fragment);
+            transaction.addToBackStack(backStateName);
+            transaction.commit();
+        }
+    }
+
+
+    /**
+     * Add fragment
+     *
+     * @param fragment fragment
+     */
+    protected void replaceFragmentFromFragment(Fragment fragment) {
+        String backStateName = fragment.getClass().getName();
+        int containerId = ((ViewGroup) getView().getParent()).getId();
         if(getActivity() != null) {
             FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
             transaction.replace(containerId, fragment);

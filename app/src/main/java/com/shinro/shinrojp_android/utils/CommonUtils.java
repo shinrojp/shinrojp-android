@@ -41,4 +41,11 @@ public class CommonUtils {
         return "http://" + s.substring(2);
     }
 
+    public static String getProgramUrlForWebView(String s) {
+        if(s.contains("http") || s.contains("https")){
+            return s;
+        }
+        return "http://" + s.substring(2);
+    }
+
 }

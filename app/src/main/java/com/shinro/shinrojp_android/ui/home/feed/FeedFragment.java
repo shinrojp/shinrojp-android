@@ -23,6 +23,8 @@ import com.shinro.shinrojp_android.models.NHK.G1;
 import com.shinro.shinrojp_android.utils.AppLogger;
 import com.shinro.shinrojp_android.utils.CommonUtils;
 import com.shinro.shinrojp_android.utils.RecyclerViewUtils.CustomSnapHelper;
+import com.shinro.shinrojp_android.utils.RecyclerViewUtils.RecyclerViewClickListener;
+import com.shinro.shinrojp_android.utils.RecyclerViewUtils.RecyclerViewTouchListener;
 import com.smarteist.autoimageslider.IndicatorAnimations;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
@@ -88,6 +90,22 @@ public class FeedFragment extends BaseFragment implements FeedContract.View {
         rcvProgram.setAdapter(adapter);
         SnapHelper snapHelper = new CustomSnapHelper();
         snapHelper.attachToRecyclerView(rcvProgram);
+        rcvProgram.addOnItemTouchListener(new RecyclerViewTouchListener(getActivity(), rcvProgram, new RecyclerViewClickListener() {
+            @Override
+            public void onClick(View view, int pos) {
+                String id = g1s.get(pos).getId();
+                Bundle bundle = new Bundle();
+                bundle.putString("nhk_id", id);
+                WebViewFragment fragment = new WebViewFragment();
+                fragment.setArguments(bundle);
+                replaceFragmentFromFragment(fragment);
+            }
+
+            @Override
+            public void onLongClick(View view, int pos) {
+
+            }
+        }));
     }
 
     @Override

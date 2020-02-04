@@ -2,10 +2,11 @@
 <com.google.android.material.appbar.MaterialToolbar
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/toolbar"
+    android:id="@+id/toolbar_feed"
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
     android:fitsSystemWindows="true"
+    app:title="Back"
     android:minHeight="?attr/actionBarSize"
     app:theme="@style/Widget.MaterialComponents.ActionBar.Surface"
     android:background="@android:color/transparent" />

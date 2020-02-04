@@ -15,7 +15,7 @@ public interface FeedService {
     @GET("list/130/g1/{current_date}.json")
     Observable<NHKProgramList> fetchProgramList(@Path("current_date") String current_date, @Query("key") String api_key);
 
-    @GET("info/130/g1/{id}.json?key={api_key}")
-    Observable<NHKProgramList> fetchProgramDetail(@Path("id") int id, @Path("api_key") String api_key);
+    @GET("info/130/g1/{id}.json")
+    Observable<NHKProgramList> fetchProgramDetail(@Path("id") String id, @Query("key") String api_key);
 
 }

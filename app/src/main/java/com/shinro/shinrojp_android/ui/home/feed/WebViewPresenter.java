@@ -4,8 +4,6 @@ import com.shinro.shinrojp_android.api.ApiUtil;
 import com.shinro.shinrojp_android.models.NHK.G1;
 import com.shinro.shinrojp_android.models.NHK.NHKProgramList;
 
-import java.util.ArrayList;
-
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -13,19 +11,17 @@ import io.reactivex.schedulers.Schedulers;
 
 import static com.shinro.shinrojp_android.utils.Constants.NHK_API_KEY;
 
-public class
-FeedPresenter implements FeedContract.Presenter {
+public class WebViewPresenter implements WebViewContract.Presenter {
 
-    private FeedContract.View mView;
+    private WebViewContract.View mView;
 
-    public FeedPresenter(FeedContract.View mView) {
+    public WebViewPresenter(WebViewContract.View mView) {
         this.mView = mView;
     }
 
-
     @Override
-    public void onFetchProgramList(String current_date) {
-        ApiUtil.getFeedApiService(false, null).fetchProgramList(current_date, NHK_API_KEY)
+    public void onFetchProgramUrl(String id) {
+        ApiUtil.getFeedApiService(false, null).fetchProgramDetail(id, NHK_API_KEY)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(new Observer<NHKProgramList>() {
@@ -35,13 +31,13 @@ FeedPresenter implements FeedContract.Presenter {
                     }
 
                     @Override
-                    public void onNext(NHKProgramList nhkProgramLists) {
-                        mView.onFetchProgramListSuccess(convertObject(nhkProgramLists));
+                    public void onNext(NHKProgramList nhkProgramList) {
+                        mView.onFetchProgramUrlSuccess(convertObject(nhkProgramList));
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        mView.onFetchProgramListFail(e);
+                        mView.onFetchProgramUrlFail(e);
                     }
 
                     @Override
@@ -51,10 +47,11 @@ FeedPresenter implements FeedContract.Presenter {
                 });
     }
 
-    private ArrayList<G1> convertObject(NHKProgramList model) {
+    private G1 convertObject(NHKProgramList model) {
         if(model != null) {
-            return model.getList().getG1();
+            return model.getList().getG1().get(0);
         }
         return null;
     }
+
 }
