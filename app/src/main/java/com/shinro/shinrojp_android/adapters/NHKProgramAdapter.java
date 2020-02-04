@@ -40,6 +40,13 @@ public class NHKProgramAdapter extends RecyclerView.Adapter<NHKProgramViewHolder
     public void onBindViewHolder(@NonNull NHKProgramViewHolder holder, int position) {
         holder.tvProgramTitle.setText(mPrograms.get(position).getTitle());
         ImageViewUtils.loadImage(holder.itemView, holder.imvProgramLogo, CommonUtils.getImageUrlForGlide(mPrograms.get(position).getService().getLogoM().getUrl()), Priority.NORMAL);
+        RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) holder.itemView.getLayoutParams();
+        if(holder.getAdapterPosition() == 0) {
+            params.topMargin = holder.itemView.getResources().getDimensionPixelSize(R.dimen.activity_vertical_margin);
+        }else{
+            params.topMargin = 0;
+        }
+        holder.itemView.setLayoutParams(params);
     }
 
     @Override

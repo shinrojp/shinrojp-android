@@ -1,15 +1,10 @@
 package com.shinro.shinrojp_android.ui.home.feed;
 
-import android.content.Context;
 import android.graphics.Color;
-import android.media.Image;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,6 +12,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.SnapHelper;
 
 import com.google.android.material.textview.MaterialTextView;
 import com.shinro.shinrojp_android.R;
@@ -26,6 +22,7 @@ import com.shinro.shinrojp_android.bases.BaseFragment;
 import com.shinro.shinrojp_android.models.NHK.G1;
 import com.shinro.shinrojp_android.utils.AppLogger;
 import com.shinro.shinrojp_android.utils.CommonUtils;
+import com.shinro.shinrojp_android.utils.RecyclerViewUtils.CustomSnapHelper;
 import com.smarteist.autoimageslider.IndicatorAnimations;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
@@ -89,6 +86,8 @@ public class FeedFragment extends BaseFragment implements FeedContract.View {
         rcvProgram.setHasFixedSize(true);
         NHKProgramAdapter adapter = new NHKProgramAdapter(getActivity(), g1s);
         rcvProgram.setAdapter(adapter);
+        SnapHelper snapHelper = new CustomSnapHelper();
+        snapHelper.attachToRecyclerView(rcvProgram);
     }
 
     @Override
@@ -100,4 +99,5 @@ public class FeedFragment extends BaseFragment implements FeedContract.View {
     public void onFetchProgramListFail(Throwable throwable) {
         AppLogger.e(throwable);
     }
+
 }

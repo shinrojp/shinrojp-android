@@ -1,5 +1,6 @@
 package com.shinro.shinrojp_android.bases;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -9,11 +10,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.shinro.shinrojp_android.utils.ProgressDialogUtils;
+
 import io.reactivex.disposables.CompositeDisposable;
 
 public class BaseActivity extends AppCompatActivity {
 
     private CompositeDisposable disposable = new CompositeDisposable();
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -123,6 +127,18 @@ public class BaseActivity extends AppCompatActivity {
 
     protected void toastMessage(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    protected void onShowLoading() {
+        onHideLoading();
+        progressDialog = ProgressDialogUtils.showLoadingDialog(this);
+    }
+
+    protected void onHideLoading() {
+        if(progressDialog != null && progressDialog.isShowing()) {
+            progressDialog.dismiss();
+            //progressDialog.cancel();
+        }
     }
 
 }
