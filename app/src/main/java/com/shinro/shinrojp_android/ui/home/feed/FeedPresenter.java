@@ -13,15 +13,13 @@ import io.reactivex.schedulers.Schedulers;
 
 import static com.shinro.shinrojp_android.utils.Constants.NHK_API_KEY;
 
-public class
-FeedPresenter implements FeedContract.Presenter {
+public class FeedPresenter implements FeedContract.Presenter {
 
     private FeedContract.View mView;
 
     public FeedPresenter(FeedContract.View mView) {
         this.mView = mView;
     }
-
 
     @Override
     public void onFetchProgramList(String current_date) {

@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -50,18 +49,23 @@ public class BaseActivityFullScreen extends AppCompatActivity {
         }
     }
 
+    /**
+     * Navigate to new activity
+     * @param classname
+     */
     protected void navigateActivity(Class classname) {
         Intent intent = new Intent(this, classname);
         startActivity(intent);
     }
 
+    /**
+     * Navigate to new activity for result
+     * @param classname
+     * @param request_code
+     */
     protected void navigateActivityForResult(Class classname, int request_code) {
         Intent intent = new Intent(this, classname);
         startActivityForResult(intent, request_code);
-    }
-
-    protected void toastMessage(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
 }

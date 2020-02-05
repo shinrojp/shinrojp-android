@@ -14,7 +14,7 @@
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="220dp"
             style="@style/Widget.MaterialComponents.CardView"
             app:cardCornerRadius="6dp"
             app:cardMaxElevation="2dp"
@@ -26,7 +26,7 @@
             <com.smarteist.autoimageslider.SliderView
                 android:id="@+id/imageSlider"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="220dp"
                 app:sliderAnimationDuration="600"
                 app:sliderAutoCycleDirection="back_and_forth"
                 app:sliderAutoCycleEnabled="true"
@@ -50,11 +50,17 @@
             android:orientation="vertical">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcvQuiz"
+                android:id="@+id/rcvProgram"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:padding="16dp" />
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                app:fastScrollEnabled="true"
+                app:fastScrollHorizontalThumbDrawable="@drawable/thumb_drawable"
+                app:fastScrollHorizontalTrackDrawable="@drawable/line_drawable"
+                app:fastScrollVerticalThumbDrawable="@drawable/thumb_drawable"
+                app:fastScrollVerticalTrackDrawable="@drawable/line_drawable"/>
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvTip"
@@ -66,17 +72,11 @@
                 android:text="Hot Tip" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcvProgram"
+                android:id="@+id/rcvQuiz"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:orientation="horizontal"
-                android:padding="16dp"
-                app:fastScrollEnabled="true"
-                app:fastScrollHorizontalThumbDrawable="@drawable/thumb_drawable"
-                app:fastScrollHorizontalTrackDrawable="@drawable/line_drawable"
-                app:fastScrollVerticalThumbDrawable="@drawable/thumb_drawable"
-                app:fastScrollVerticalTrackDrawable="@drawable/line_drawable"/>
+                android:layout_marginTop="8dp"
+                android:padding="16dp" />
 
         </LinearLayout>
 

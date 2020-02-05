@@ -8,26 +8,38 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.shinro.shinrojp_android.R;
 import com.shinro.shinrojp_android.bases.BaseFragment;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class QuizFragment extends BaseFragment implements QuizContract.View {
+
+    @BindView(R.id.edtInviteCode) TextInputEditText edtInviteCode;
 
     private QuizContract.Presenter mPresenter = new QuizPresenter(this);   // Presenter
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        //TODO: Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_quiz, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        initView();
+        initView(view);
+        onJoinGame();
     }
 
-    private void initView() {
+    private void initView(View view) {
+        ButterKnife.bind(this, view);
+    }
 
+    @OnClick(R.id.btnJoin)
+    private void onJoinGame() {
+        String invite_code = edtInviteCode.getText().toString().trim();
     }
 
 }

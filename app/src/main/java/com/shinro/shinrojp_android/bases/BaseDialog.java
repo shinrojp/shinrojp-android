@@ -22,7 +22,9 @@ public class BaseDialog {
     }
 
     /**
-     * Set title
+     * Set title for dialog
+     * @param titleId
+     * @return
      */
     public BaseDialog setTitle(int titleId) {
         dialogBuilder.setTitle(titleId);
@@ -30,7 +32,9 @@ public class BaseDialog {
     }
 
     /**
-     * Set title
+     * Set title for dialog
+     * @param title
+     * @return
      */
     public BaseDialog setTitle(CharSequence title) {
         if (title == null) {
@@ -41,7 +45,9 @@ public class BaseDialog {
     }
 
     /**
-     * Set message
+     * Set message for dialog
+     * @param messageId
+     * @return
      */
     public BaseDialog setMessage(int messageId) {
         dialogBuilder.setMessage(messageId);
@@ -49,7 +55,9 @@ public class BaseDialog {
     }
 
     /**
-     * Set message
+     * Set message for dialog
+     * @param message
+     * @return
      */
     public BaseDialog setMessage(CharSequence message) {
         if (message == null) {
@@ -60,7 +68,10 @@ public class BaseDialog {
     }
 
     /**
-     * Set Positive Button
+     * Set positive button for dialog
+     * @param textId
+     * @param listener
+     * @return
      */
     public BaseDialog setPositiveButton(int textId, DialogInterface.OnClickListener listener) {
         dialogBuilder.setPositiveButton(textId, listener);
@@ -68,7 +79,10 @@ public class BaseDialog {
     }
 
     /**
-     * Set Positive Button
+     * Set positive button for dialog
+     * @param text
+     * @param listener
+     * @return
      */
     public BaseDialog setPositiveButton(CharSequence text, DialogInterface.OnClickListener listener) {
         dialogBuilder.setPositiveButton(text, listener);
@@ -76,7 +90,10 @@ public class BaseDialog {
     }
 
     /**
-     * Set Negative Button
+     * Set negative button for dialog
+     * @param textId
+     * @param listener
+     * @return
      */
     public BaseDialog setNegativeButton(int textId, DialogInterface.OnClickListener listener) {
         dialogBuilder.setNegativeButton(textId, listener);
@@ -84,7 +101,10 @@ public class BaseDialog {
     }
 
     /**
-     * Set Negative Button
+     * Set negative button for dialog
+     * @param text
+     * @param listener
+     * @return
      */
     public BaseDialog setNegativeButton(CharSequence text, DialogInterface.OnClickListener listener) {
         dialogBuilder.setNegativeButton(text, listener);
@@ -92,7 +112,10 @@ public class BaseDialog {
     }
 
     /**
-     * Set Neutral Button
+     * Set neutral button for dialog
+     * @param textId
+     * @param listener
+     * @return
      */
     public BaseDialog setNeutralButton(int textId, DialogInterface.OnClickListener listener) {
         dialogBuilder.setNeutralButton(textId, listener);
@@ -100,7 +123,10 @@ public class BaseDialog {
     }
 
     /**
-     * Set Neutral Button
+     * Set neutral button for dialog
+     * @param text
+     * @param listener
+     * @return
      */
     public BaseDialog setNeutralButton(CharSequence text, DialogInterface.OnClickListener listener) {
         dialogBuilder.setNeutralButton(text, listener);
@@ -108,7 +134,9 @@ public class BaseDialog {
     }
 
     /**
-     * Set Cancelable
+     * Set cancelable for dialog
+     * @param cancelable
+     * @return
      */
     public BaseDialog setCancelable(Boolean cancelable) {
         if (cancelable == null) {
@@ -119,7 +147,8 @@ public class BaseDialog {
     }
 
     /**
-     * Show
+     * Show dialog
+     * @return
      */
     public AlertDialog showDialog() {
         try {
@@ -132,7 +161,7 @@ public class BaseDialog {
     }
 
     /**
-     * Dismiss
+     * Dismiss dialog
      */
     public void dismissDialog() {
         try {

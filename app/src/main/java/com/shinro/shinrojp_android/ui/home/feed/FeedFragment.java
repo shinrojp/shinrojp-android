@@ -22,6 +22,7 @@ import com.shinro.shinrojp_android.bases.BaseFragment;
 import com.shinro.shinrojp_android.models.NHK.G1;
 import com.shinro.shinrojp_android.utils.AppLogger;
 import com.shinro.shinrojp_android.utils.CommonUtils;
+import com.shinro.shinrojp_android.utils.ProgressDialogUtils;
 import com.shinro.shinrojp_android.utils.RecyclerViewUtils.CustomSnapHelper;
 import com.shinro.shinrojp_android.utils.RecyclerViewUtils.RecyclerViewClickListener;
 import com.shinro.shinrojp_android.utils.RecyclerViewUtils.RecyclerViewTouchListener;
@@ -35,6 +36,8 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import static com.shinro.shinrojp_android.utils.Constants.SYSTEM_DATE;
 
 public class FeedFragment extends BaseFragment implements FeedContract.View {
 
@@ -77,7 +80,8 @@ public class FeedFragment extends BaseFragment implements FeedContract.View {
     }
 
     private void fetchProgramListData() {
-        mPresenter.onFetchProgramList(CommonUtils.getSystemDate());
+        mPresenter.onFetchProgramList(SYSTEM_DATE);
+        onShowLoading();
     }
 
     private void initRecyclerView(ArrayList<G1> g1s) {
@@ -110,7 +114,12 @@ public class FeedFragment extends BaseFragment implements FeedContract.View {
 
     @Override
     public void onFetchProgramListSuccess(ArrayList<G1> list) {
-        initRecyclerView(list);
+        if(list.size() != 0) {
+            onHideLoading();
+            initRecyclerView(list);
+        }else{
+            fetchProgramListData();
+        }
     }
 
     @Override

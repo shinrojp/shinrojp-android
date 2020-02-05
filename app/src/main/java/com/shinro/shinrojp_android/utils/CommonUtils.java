@@ -1,10 +1,13 @@
 package com.shinro.shinrojp_android.utils;
 
 import android.app.Activity;
+import android.content.Context;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.shashank.sony.fancytoastlib.FancyToast;
 
 import java.util.Calendar;
 
@@ -46,6 +49,47 @@ public class CommonUtils {
             return s;
         }
         return "http://" + s.substring(2);
+    }
+
+    public static void toastMessage(Context context, String message) {
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+    }
+
+    //FancyToast
+    public static void showToast(Context context, String message) {
+        FancyToast.makeText(context, message, FancyToast.LENGTH_SHORT, FancyToast.DEFAULT,true).show();
+    }
+
+    public static void showSuccessToast(Context context, String message) {
+        FancyToast.makeText(context, message ,FancyToast.LENGTH_SHORT, FancyToast.SUCCESS,true).show();
+    }
+
+    public static void showInfoToast(Context context, String message) {
+        FancyToast.makeText(context, message, FancyToast.LENGTH_SHORT, FancyToast.INFO,true).show();
+    }
+
+    public static void showWarningToast(Context context, String message) {
+        FancyToast.makeText(context, message, FancyToast.LENGTH_SHORT, FancyToast.WARNING,true).show();
+    }
+
+    public static void showErrorToast(Context context, String message) {
+        FancyToast.makeText(context, message, FancyToast.LENGTH_SHORT, FancyToast.ERROR,true).show();
+    }
+
+    public static void showConfusingToast(Context context, String message) {
+        FancyToast.makeText(context, message, FancyToast.LENGTH_SHORT, FancyToast.CONFUSING,true).show();
+    }
+
+    public static void showCustomToastWithParam(Context context, String message, int duration, int type, boolean icon) {
+        FancyToast.makeText(context, message, duration, type, icon).show();
+    }
+
+    public static void showCustomImageToastWithParam(Context context, String message, int duration, int type, int image, boolean icon) {
+        FancyToast.makeText(context, message, duration, type, image, icon).show();
+    }
+
+    public static void showCustomToastWithoutIcon(Context context, String message, int duration, int type, int image) {
+        FancyToast.makeText(context, message, duration, type, image, false);
     }
 
 }

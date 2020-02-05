@@ -1,16 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="20sp"
-        android:textColor="@color/colorAccent"
-        android:gravity="center"
-        android:layout_marginTop="64dp"
-        android:text="Quiz"/>
+    <include
+        android:id="@+id/toolbar_quiz"
+        layout="@layout/toolbar_quiz"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_quiz">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/textColorPrimary"
+            android:text="@string/quiz_title"
+            android:layout_marginBottom="16dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+            app:counterMaxLength="5"
+            app:hintEnabled="true"
+            app:hintAnimationEnabled="true"
+            android:layout_marginBottom="8dp"
+            app:counterTextAppearance="@style/HomeTheme.CounterText"
+            app:hintTextAppearance="@style/HomeTheme.HintText"
+            app:counterOverflowTextAppearance="@style/HomeTheme.CounterTextOverFlowText"
+            app:errorTextAppearance="@style/HomeTheme.ErrorText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtInviteCode"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:maxLength="5"
+                android:hint="@string/quiz_edt_code"
+                android:textColor="@color/color_hint"
+                android:inputType="number"
+                android:background="@color/colorSecondaryLight"
+                android:padding="16dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnJoin"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="@string/quiz_btn_join"
+            android:textColor="@color/textColorPrimary"
+            android:background="@color/colorPrimaryDark"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

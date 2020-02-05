@@ -8,11 +8,13 @@ import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.shinro.shinrojp_android.R;
@@ -26,10 +28,11 @@ import org.jetbrains.annotations.NotNull;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class WebViewFragment extends BaseFragment implements WebViewContract.View {
+public class WebViewFragment extends BaseFragment implements WebViewContract.View, View.OnClickListener {
 
     @BindView(R.id.wvProgram) WebView wvProgram;
-    @BindView(R.id.toolbar_feed) MaterialToolbar toolbar_feed;
+    @BindView(R.id.imvBack) ImageView imvBack;
+    @BindView(R.id.imvReload) ImageView imvReload;
 
     private String id;
 
@@ -48,21 +51,8 @@ public class WebViewFragment extends BaseFragment implements WebViewContract.Vie
 
     private void initView(@NotNull View view) {
         ButterKnife.bind(this, view);
-        toolbar_feed.setNavigationIcon(R.drawable.ic_auth_back); // need to set the icon here to have a navigation icon. You can simple create an vector image by "Vector Asset" and using here
-        toolbar_feed.setNavigationOnClickListener(view1 -> {
-
-        });
-
-        toolbar_feed.inflateMenu(R.menu.menu_feed);
-        toolbar_feed.setOnMenuItemClickListener(item -> {
-            if(item.getItemId() == R.id.action_refresh) {
-                return true;
-            }
-            return super.onOptionsItemSelected(item);
-        });
-
-        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar_feed);
-
+        imvBack.setOnClickListener(this);
+        imvReload.setOnClickListener(this);
     }
 
     private void initImageUrl() {
@@ -96,4 +86,20 @@ public class WebViewFragment extends BaseFragment implements WebViewContract.Vie
         AppLogger.e(e);
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.imvBack:
+                int countStack = getActivity().getSupportFragmentManager().getBackStackEntryCount();
+                if (countStack > 1) {
+                    getActivity().getSupportFragmentManager().popBackStack();
+                }
+                break;
+            case R.id.imvReload:
+                wvProgram.reload();
+                break;
+            default:
+                break;
+        }
+    }
 }

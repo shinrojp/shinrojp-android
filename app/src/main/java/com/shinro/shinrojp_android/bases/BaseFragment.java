@@ -1,15 +1,21 @@
 package com.shinro.shinrojp_android.bases;
 
+import android.app.ProgressDialog;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.shashank.sony.fancytoastlib.FancyToast;
+import com.shinro.shinrojp_android.utils.ProgressDialogUtils;
 
 import io.reactivex.disposables.CompositeDisposable;
 
 public class BaseFragment extends Fragment {
 
     private CompositeDisposable disposable = new CompositeDisposable();
+    private ProgressDialog progressDialog;
 
     @Override
     public void onDestroy() {
@@ -26,6 +32,7 @@ public class BaseFragment extends Fragment {
     protected void loadFragmentToContainer(int containerId, Fragment fragment) {
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
         transaction.replace(containerId, fragment);
+        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         transaction.commit();
     }
 
@@ -40,6 +47,7 @@ public class BaseFragment extends Fragment {
         if(getActivity() != null) {
             FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
             transaction.replace(containerId, fragment);
+            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             transaction.addToBackStack(backStateName);
             transaction.commit();
         }
@@ -56,14 +64,14 @@ public class BaseFragment extends Fragment {
         if(getActivity() != null) {
             FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
             transaction.replace(containerId, fragment);
+            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             transaction.addToBackStack(backStateName);
             transaction.commit();
         }
     }
 
-
     /**
-     * Add fragment
+     * Replace fragment from fragment
      *
      * @param fragment fragment
      */
@@ -73,8 +81,27 @@ public class BaseFragment extends Fragment {
         if(getActivity() != null) {
             FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
             transaction.replace(containerId, fragment);
+            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             transaction.addToBackStack(backStateName);
             transaction.commit();
+        }
+    }
+
+    /**
+     * Show progress dialog
+     */
+    protected void onShowLoading() {
+        onHideLoading();
+        progressDialog = ProgressDialogUtils.showLoadingDialog(getContext());
+    }
+
+    /**
+     * Hide progress dialog
+     */
+    protected void onHideLoading() {
+        if(progressDialog != null && progressDialog.isShowing()) {
+            progressDialog.dismiss();
+            //progressDialog.cancel();
         }
     }
 

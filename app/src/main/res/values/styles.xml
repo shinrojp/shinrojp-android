@@ -43,6 +43,26 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="HomeTheme.HintText" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/color_hint</item>
+    </style>
+
+    <style name="HomeTheme.CounterText" parent="TextAppearance.Design.Counter">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/color_hint</item>
+    </style>
+
+    <style name="HomeTheme.CounterTextOverFlowText" parent="TextAppearance.Design.Counter.Overflow">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="HomeTheme.ErrorText" parent="TextAppearance.Design.Counter.Overflow">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
     <style name="CommonTheme" parent="AppTheme">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>

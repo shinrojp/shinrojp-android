@@ -1,13 +1,13 @@
 package com.shinro.shinrojp_android.bases;
 
-import android.app.Application;
+import androidx.multidex.MultiDexApplication;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.shinro.shinrojp_android.api.LenientTypeAdapterFactory;
 import com.shinro.shinrojp_android.utils.AppLogger;
 
-public class MainApplication extends Application {
+public class MainApplication extends MultiDexApplication {
 
     private Gson mGson;
 

@@ -22,7 +22,7 @@
 
             <ImageView
                 android:id="@+id/imvBack"
-                android:layout_width="21dp"
+                android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:src="@drawable/ic_auth_back"
                 android:contentDescription="@string/image_description"
