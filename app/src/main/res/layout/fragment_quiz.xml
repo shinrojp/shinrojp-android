@@ -6,57 +6,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <include
-        android:id="@+id/toolbar_quiz"
-        layout="@layout/toolbar_quiz"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
         android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_quiz">
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:gravity="center"
-            android:textSize="20sp"
-            android:textColor="@color/textColorPrimary"
             android:text="@string/quiz_title"
-            android:layout_marginBottom="16dp"/>
+            android:textColor="@color/textColorPrimary"
+            android:textSize="20sp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            app:errorEnabled="true"
-            app:counterMaxLength="5"
-            app:hintEnabled="true"
-            app:hintAnimationEnabled="true"
             android:layout_marginBottom="8dp"
-            app:counterTextAppearance="@style/HomeTheme.CounterText"
-            app:hintTextAppearance="@style/HomeTheme.HintText"
+            app:counterMaxLength="5"
             app:counterOverflowTextAppearance="@style/HomeTheme.CounterTextOverFlowText"
-            app:errorTextAppearance="@style/HomeTheme.ErrorText">
+            app:counterTextAppearance="@style/HomeTheme.CounterText"
+            app:errorEnabled="true"
+            app:errorTextAppearance="@style/HomeTheme.ErrorText"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:hintTextAppearance="@style/HomeTheme.HintText">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtInviteCode"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:maxLength="5"
-                android:hint="@string/quiz_edt_code"
-                android:textColor="@color/color_hint"
-                android:inputType="number"
                 android:background="@color/colorSecondaryLight"
+                android:gravity="center"
+                android:hint="@string/quiz_edt_code"
+                android:inputType="number"
+                android:maxLength="5"
                 android:padding="16dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"/>
+                android:textColor="@color/color_hint" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -64,9 +57,9 @@
             android:id="@+id/btnJoin"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
             android:text="@string/quiz_btn_join"
-            android:textColor="@color/textColorPrimary"
-            android:background="@color/colorPrimaryDark"/>
+            android:textColor="@color/textColorPrimary" />
 
     </LinearLayout>
 

@@ -5,10 +5,12 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
@@ -24,6 +26,7 @@ import com.shinro.shinrojp_android.ui.home.user.UserFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomeActivity extends BaseActivity implements HomeContract.View, View.OnClickListener {
@@ -31,10 +34,12 @@ public class HomeActivity extends BaseActivity implements HomeContract.View, Vie
     @BindView(R.id.bottom_nav) BottomNavigationView bottom_nav;
     @BindView(R.id.drawer_layout) DrawerLayout drawer_layout;
     @BindView(R.id.drawer_nav) NavigationView drawer_nav;
+    @BindView(R.id.imvNav) ImageView imvNav;
 
     private CircleImageView civProfile;
     private View headerLayout;
     private ActionBarDrawerToggle drawerToggle;
+    private Unbinder unbinder;
 
     private static final int option = Intent.FLAG_ACTIVITY_CLEAR_TOP;
 
@@ -50,8 +55,9 @@ public class HomeActivity extends BaseActivity implements HomeContract.View, Vie
     }
 
     private void initView() {
-        ButterKnife.bind(this);
+        unbinder = ButterKnife.bind(this);
         bottom_nav.setOnNavigationItemSelectedListener(navListener);
+        imvNav.setOnClickListener(v -> drawer_layout.openDrawer(GravityCompat.START));
     }
 
     private void initDrawerNavigation(NavigationView navigationView) {
@@ -73,6 +79,7 @@ public class HomeActivity extends BaseActivity implements HomeContract.View, Vie
         drawerToggle.syncState();
 
         drawer_layout.addDrawerListener(drawerToggle);
+        drawer_layout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
     }
 
     private ActionBarDrawerToggle initDrawerToggle() {
@@ -153,5 +160,11 @@ public class HomeActivity extends BaseActivity implements HomeContract.View, Vie
             loadFragmentToContainer(R.id.frameContainer, fragment);
             drawer_layout.closeDrawers();
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unbinder.unbind();
     }
 }

@@ -21,8 +21,6 @@ import com.shinro.shinrojp_android.adapters.SliderImageAdapter;
 import com.shinro.shinrojp_android.bases.BaseFragment;
 import com.shinro.shinrojp_android.models.NHK.G1;
 import com.shinro.shinrojp_android.utils.AppLogger;
-import com.shinro.shinrojp_android.utils.CommonUtils;
-import com.shinro.shinrojp_android.utils.ProgressDialogUtils;
 import com.shinro.shinrojp_android.utils.RecyclerViewUtils.CustomSnapHelper;
 import com.shinro.shinrojp_android.utils.RecyclerViewUtils.RecyclerViewClickListener;
 import com.shinro.shinrojp_android.utils.RecyclerViewUtils.RecyclerViewTouchListener;

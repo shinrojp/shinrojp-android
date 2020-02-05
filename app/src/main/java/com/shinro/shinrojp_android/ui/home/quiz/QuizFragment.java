@@ -38,7 +38,7 @@ public class QuizFragment extends BaseFragment implements QuizContract.View {
     }
 
     @OnClick(R.id.btnJoin)
-    private void onJoinGame() {
+    protected void onJoinGame() {
         String invite_code = edtInviteCode.getText().toString().trim();
     }
 
