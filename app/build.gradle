@@ -131,4 +131,7 @@ dependencies {
     //FancyToast
     implementation "com.github.Shashank02051997:FancyToast-Android:$rootProject.fancy_toast_version"
 
+    //Spot Light
+    implementation "com.github.takusemba:spotlight:$rootProject.spot_light_version"
+
 }

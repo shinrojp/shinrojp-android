@@ -13,11 +13,19 @@ import java.util.Calendar;
 
 public class CommonUtils {
 
+    /**
+     * Hide keyboard
+     * @param view
+     */
     public static void hideKeyBoard(View view) {
         InputMethodManager inputMethodManager = (InputMethodManager) view.getContext().getSystemService(Activity.INPUT_METHOD_SERVICE);
         inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
+    /**
+     * Hide keyboard on blur
+     * @param editText
+     */
     public static void hideKeyBoardOnBlur(TextInputEditText editText) {
         editText.setOnFocusChangeListener((v, hasFocus) -> {
             if(!hasFocus) {
@@ -26,6 +34,10 @@ public class CommonUtils {
         });
     }
 
+    /**
+     * Get system date
+     * @return
+     */
     public static String getSystemDate() {
         Calendar c = Calendar.getInstance();
         int year = c.get(Calendar.YEAR);
@@ -37,6 +49,11 @@ public class CommonUtils {
         return year + "-" + m + "-" + d;
     }
 
+    /**
+     * Get image url for glide
+     * @param s
+     * @return
+     */
     public static String getImageUrlForGlide(String s) {
         if(s.contains("http") || s.contains("https")){
             return s;
