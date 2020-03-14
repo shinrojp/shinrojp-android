@@ -1,6 +1,7 @@
 package com.shinro.shinrojp_android.bases;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
@@ -103,6 +104,10 @@ public class BaseFragment extends Fragment {
             progressDialog.dismiss();
             //progressDialog.cancel();
         }
+    }
+    protected void navigateActivity(Class classname) {
+        Intent intent = new Intent(getActivity(), classname);
+        startActivity(intent);
     }
 
 }

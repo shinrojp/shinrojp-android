@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import com.google.android.material.textfield.TextInputEditText;
 import com.shinro.shinrojp_android.R;
 import com.shinro.shinrojp_android.bases.BaseFragment;
+import com.shinro.shinrojp_android.ui.game.GameActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -30,16 +31,15 @@ public class QuizFragment extends BaseFragment implements QuizContract.View {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initView(view);
-        onJoinGame();
     }
 
     private void initView(View view) {
         ButterKnife.bind(this, view);
     }
 
-    @OnClick(R.id.btnJoin)
+    @OnClick(R.id.btnJoinGame)
     protected void onJoinGame() {
-        String invite_code = edtInviteCode.getText().toString().trim();
+        navigateActivity(GameActivity.class);
     }
 
 }

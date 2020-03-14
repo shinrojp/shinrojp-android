@@ -25,6 +25,15 @@
                 android:value=".ui.home.HomeActivity"/>
         </activity>
         <activity
+            android:name=".ui.game.GameActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AuthTheme"
+            android:parentActivityName=".ui.home.HomeActivity">
+            <meta-data
+                android:name="GameActivity"
+                android:value=".ui.home.GameActivity"/>
+        </activity>
+        <activity
             android:name=".ui.home.HomeActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HomeTheme" />

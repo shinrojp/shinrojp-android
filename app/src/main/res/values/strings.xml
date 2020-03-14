@@ -73,5 +73,12 @@
     <string name="auth_edt_password">Password</string>
     <string name="auth_edt_username">Username</string>
     <string name="auth_edt_email">Email</string>
+    <!--GameActivity-->
+    <string name="tab_text_1">Goi</string>
+    <string name="tab_text_2">Kanji</string>
+    <string name="tab_text_3">Bunpou</string>
+    <string name="quiz_btn_seach">Seach</string>
+    <string name="quiz_btn_play">Play</string>
+    <string name="quiz_btn_creat">Creat</string>
 
 </resources>
