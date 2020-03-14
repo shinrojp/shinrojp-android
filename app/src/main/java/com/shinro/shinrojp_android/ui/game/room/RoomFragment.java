@@ -24,8 +24,6 @@ import butterknife.OnClick;
 public class RoomFragment extends BaseFragment implements RoomContract.View {
     @BindView(R.id.view_page_room) ViewPager viewPager;
     @BindView(R.id.tabs) TabLayout tabs;
-    @BindView(R.id.btn_game_play)  Button btnPlay;
-
 
     private RoomContract.Presenter mPresenter = new RoomPresenter(this);   // Presenter
 
@@ -47,10 +45,10 @@ public class RoomFragment extends BaseFragment implements RoomContract.View {
     private void initView(View view) {
         ButterKnife.bind(this, view);
     }
-    @OnClick(R.id.tvLogin)
+    @OnClick(R.id.btn_game_play)
     protected void btnPlay(){
         Fragment fragment = new PlayFragment();
-        loadFragmentToContainer(R.id.frameContainerGame, fragment);
+        replaceFragment(R.id.frameContainerGame, fragment);
     }
 
 }
