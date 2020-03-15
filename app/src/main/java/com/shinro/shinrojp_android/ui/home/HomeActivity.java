@@ -20,6 +20,7 @@ import com.shinro.shinrojp_android.R;
 import com.shinro.shinrojp_android.bases.BaseActivity;
 import com.shinro.shinrojp_android.ui.common.CommonActivity;
 import com.shinro.shinrojp_android.ui.home.feed.FeedFragment;
+import com.shinro.shinrojp_android.ui.home.home.HomeFragment;
 import com.shinro.shinrojp_android.ui.home.lesson.LessonFragment;
 import com.shinro.shinrojp_android.ui.home.quiz.QuizFragment;
 import com.shinro.shinrojp_android.ui.home.user.UserFragment;
@@ -31,7 +32,6 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomeActivity extends BaseActivity implements HomeContract.View, View.OnClickListener {
 
-    @BindView(R.id.bottom_nav) BottomNavigationView bottom_nav;
     @BindView(R.id.drawer_layout) DrawerLayout drawer_layout;
     @BindView(R.id.drawer_nav) NavigationView drawer_nav;
 
@@ -55,7 +55,6 @@ public class HomeActivity extends BaseActivity implements HomeContract.View, Vie
 
     private void initView() {
         unbinder = ButterKnife.bind(this);
-        bottom_nav.setOnNavigationItemSelectedListener(navListener);
     }
 
     private void initDrawerNavigation(NavigationView navigationView) {
@@ -108,7 +107,7 @@ public class HomeActivity extends BaseActivity implements HomeContract.View, Vie
     }
 
     private void initFirstFragment() {
-        Fragment fragment = new FeedFragment();
+        Fragment fragment = new HomeFragment();
         loadFragmentToContainer(R.id.frameContainer, fragment);
     }
 
