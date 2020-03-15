@@ -8,9 +8,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.shinro.shinrojp_android.R;
-import com.shinro.shinrojp_android.ui.game.room.bunpou.BunpouFragment;
-import com.shinro.shinrojp_android.ui.game.room.goi.GoiFragment;
-import com.shinro.shinrojp_android.ui.game.room.kanji.KanjiFragment;
+import com.shinro.shinrojp_android.ui.main.game.room.bunpou.BunpouFragment;
+import com.shinro.shinrojp_android.ui.main.game.room.goi.GoiFragment;
+import com.shinro.shinrojp_android.ui.main.game.room.kanji.KanjiFragment;
 
 public class TabsPagerAdapter extends FragmentPagerAdapter {
     @StringRes
