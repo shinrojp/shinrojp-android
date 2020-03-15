@@ -5,7 +5,7 @@
         android:icon="@drawable/ic_home_feed"
         android:title="@string/bottom_nav_menu_feed"/>
     <item
-        android:id="@+id/bottom_nav_learn"
+        android:id="@+id/bottom_nav_grammar"
         android:icon="@drawable/ic_home_learn"
         android:title="@string/bottom_nav_menu_learn"/>
     <item

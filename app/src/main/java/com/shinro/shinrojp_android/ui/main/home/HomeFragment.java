@@ -12,8 +12,8 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.shinro.shinrojp_android.R;
 import com.shinro.shinrojp_android.bases.BaseFragment;
+import com.shinro.shinrojp_android.ui.main.grammar.GrammarFragment;
 import com.shinro.shinrojp_android.ui.main.home.feed.FeedFragment;
-import com.shinro.shinrojp_android.ui.main.home.lesson.LessonFragment;
 import com.shinro.shinrojp_android.ui.main.home.quiz.QuizFragment;
 
 import butterknife.BindView;
@@ -46,8 +46,8 @@ public class HomeFragment extends BaseFragment implements HomeContract.View {
             case R.id.bottom_nav_feed:
                 fragment = new FeedFragment();
                 break;
-            case R.id.bottom_nav_learn:
-                fragment = new LessonFragment();
+            case R.id.bottom_nav_grammar:
+                fragment = new GrammarFragment();
                 break;
             case R.id.bottom_nav_quiz:
                 fragment = new QuizFragment();

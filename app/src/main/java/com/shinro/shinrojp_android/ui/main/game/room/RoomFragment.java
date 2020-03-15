@@ -47,7 +47,7 @@ public class RoomFragment extends BaseFragment implements RoomContract.View {
     @OnClick(R.id.btn_game_play)
     protected void btnPlay(){
         Fragment fragment = new StartFragment();
-        replaceFragment(R.id.frameContainerGame, fragment);
+        replaceFragment(R.id.frameContainer, fragment);
     }
 
 }

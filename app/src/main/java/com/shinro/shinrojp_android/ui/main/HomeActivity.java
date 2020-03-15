@@ -17,10 +17,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.shinro.shinrojp_android.R;
 import com.shinro.shinrojp_android.bases.BaseActivity;
 import com.shinro.shinrojp_android.ui.common.CommonActivity;
-import com.shinro.shinrojp_android.ui.main.home.feed.FeedFragment;
 import com.shinro.shinrojp_android.ui.main.home.HomeFragment;
-import com.shinro.shinrojp_android.ui.main.home.lesson.LessonFragment;
-import com.shinro.shinrojp_android.ui.main.home.quiz.QuizFragment;
 import com.shinro.shinrojp_android.ui.main.user.UserFragment;
 
 import butterknife.BindView;
@@ -109,24 +106,24 @@ public class HomeActivity extends BaseActivity implements HomeContract.View, Vie
         loadFragmentToContainer(R.id.frameContainer, fragment);
     }
 
-    private BottomNavigationView.OnNavigationItemSelectedListener navListener = menuItem -> {
-        Fragment fragment = null;
-        switch (menuItem.getItemId()) {
-            case R.id.bottom_nav_feed:
-                fragment = new FeedFragment();
-                break;
-            case R.id.bottom_nav_learn:
-                fragment = new LessonFragment();
-                break;
-            case R.id.bottom_nav_quiz:
-                fragment = new QuizFragment();
-                break;
-            default:
-                break;
-        }
-        loadFragmentToContainer(R.id.frameContainer, fragment);
-        return true;
-    };
+//    private BottomNavigationView.OnNavigationItemSelectedListener navListener = menuItem -> {
+//        Fragment fragment = null;
+//        switch (menuItem.getItemId()) {
+//            case R.id.bottom_nav_feed:
+//                fragment = new FeedFragment();
+//                break;
+//            case R.id.bottom_nav_learn:
+//                fragment = new LessonFragment();
+//                break;
+//            case R.id.bottom_nav_quiz:
+//                fragment = new QuizFragment();
+//                break;
+//            default:
+//                break;
+//        }
+//        loadFragmentToContainer(R.id.frameContainer, fragment);
+//        return true;
+//    };
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

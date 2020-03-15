@@ -7,11 +7,12 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.shinro.shinrojp_android.R;
 import com.shinro.shinrojp_android.bases.BaseFragment;
-import com.shinro.shinrojp_android.ui.main.game.GameActivity;
+import com.shinro.shinrojp_android.ui.main.game.GameFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -39,7 +40,8 @@ public class QuizFragment extends BaseFragment implements QuizContract.View {
 
     @OnClick(R.id.btnJoinGame)
     protected void onJoinGame() {
-        navigateActivity(GameActivity.class);
+        Fragment fragment = new GameFragment();
+        replaceFragment(R.id.frameContainer, fragment);
     }
 
 }

@@ -38,7 +38,7 @@ public class StartFragment extends BaseFragment implements StartContract.View {
     @OnClick(R.id.btn_game_start)
     protected void btnStart(){
         Fragment fragment = new PlayFragment();
-        replaceFragment(R.id.frameContainerGame, fragment);
+        replaceFragment(R.id.frameContainer, fragment);
     }
 
 }
