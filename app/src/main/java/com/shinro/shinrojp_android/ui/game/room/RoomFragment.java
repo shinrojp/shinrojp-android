@@ -17,7 +17,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.shinro.shinrojp_android.R;
 import com.shinro.shinrojp_android.adapters.TabsPagerAdapter;
 import com.shinro.shinrojp_android.bases.BaseFragment;
-import com.shinro.shinrojp_android.ui.game.play.PlayFragment;
+import com.shinro.shinrojp_android.ui.game.start.StartFragment;
 
 import butterknife.OnClick;
 
@@ -47,7 +47,7 @@ public class RoomFragment extends BaseFragment implements RoomContract.View {
     }
     @OnClick(R.id.btn_game_play)
     protected void btnPlay(){
-        Fragment fragment = new PlayFragment();
+        Fragment fragment = new StartFragment();
         replaceFragment(R.id.frameContainerGame, fragment);
     }
 

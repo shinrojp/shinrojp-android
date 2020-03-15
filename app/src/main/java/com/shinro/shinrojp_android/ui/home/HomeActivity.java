@@ -34,7 +34,6 @@ public class HomeActivity extends BaseActivity implements HomeContract.View, Vie
     @BindView(R.id.bottom_nav) BottomNavigationView bottom_nav;
     @BindView(R.id.drawer_layout) DrawerLayout drawer_layout;
     @BindView(R.id.drawer_nav) NavigationView drawer_nav;
-    @BindView(R.id.imvNav) ImageView imvNav;
 
     private CircleImageView civProfile;
     private View headerLayout;
@@ -57,7 +56,6 @@ public class HomeActivity extends BaseActivity implements HomeContract.View, Vie
     private void initView() {
         unbinder = ButterKnife.bind(this);
         bottom_nav.setOnNavigationItemSelectedListener(navListener);
-        imvNav.setOnClickListener(v -> drawer_layout.openDrawer(GravityCompat.START));
     }
 
     private void initDrawerNavigation(NavigationView navigationView) {
