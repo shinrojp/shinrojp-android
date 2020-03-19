@@ -12,9 +12,11 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.shinro.shinrojp_android.R;
 import com.shinro.shinrojp_android.bases.BaseFragment;
+import com.shinro.shinrojp_android.ui.common.setting.SettingFragment;
 import com.shinro.shinrojp_android.ui.main.grammar.GrammarFragment;
 import com.shinro.shinrojp_android.ui.main.home.feed.FeedFragment;
 import com.shinro.shinrojp_android.ui.main.home.quiz.QuizFragment;
+import com.shinro.shinrojp_android.ui.main.home.trending.TrendingFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -46,11 +48,17 @@ public class HomeFragment extends BaseFragment implements HomeContract.View {
             case R.id.bottom_nav_feed:
                 fragment = new FeedFragment();
                 break;
+            case R.id.bottom_nav_trending:
+                fragment = new TrendingFragment();
+                break;
             case R.id.bottom_nav_grammar:
                 fragment = new GrammarFragment();
                 break;
             case R.id.bottom_nav_quiz:
                 fragment = new QuizFragment();
+                break;
+            case R.id.bottom_nav_setting:
+                fragment = new SettingFragment();
                 break;
             default:
                 break;

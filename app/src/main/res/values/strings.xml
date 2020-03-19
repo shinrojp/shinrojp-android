@@ -77,8 +77,10 @@
     <string name="tab_text_1">Goi</string>
     <string name="tab_text_2">Kanji</string>
     <string name="tab_text_3">Bunpou</string>
-    <string name="quiz_btn_seach">Seach</string>
+    <string name="quiz_btn_seach">Search</string>
     <string name="quiz_btn_play">Play</string>
     <string name="quiz_btn_creat">Creat</string>
+    <string name="bottom_nav_menu_trending">Trending</string>
+    <string name="bottom_nav_menu_setting">Setting</string>
 
 </resources>

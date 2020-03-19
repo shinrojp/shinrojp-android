@@ -18,7 +18,7 @@
         <activity
             android:name=".ui.common.CommonActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/CommonTheme"
+            android:theme="@style/AuthTheme"
             android:parentActivityName=".ui.main.HomeActivity">
             <meta-data
                 android:name="HomeActivity"
@@ -27,7 +27,7 @@
         <activity
             android:name=".ui.main.HomeActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/HomeTheme" />
+            android:theme="@style/AuthTheme" />
         <activity
             android:name=".ui.auth.register.RegisterActivity"
             android:screenOrientation="portrait"

@@ -1,9 +1,13 @@
 package com.shinro.shinrojp_android.ui.main.game.room;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,6 +27,21 @@ import butterknife.OnClick;
 public class RoomFragment extends BaseFragment implements RoomContract.View {
     @BindView(R.id.view_page_room) ViewPager viewPager;
     @BindView(R.id.tabs) TabLayout tabs;
+//    @BindView(R.id.btn_game_seach)
+//    Button btn_search;
+//    @BindView(R.id.btn_game_play)
+//    Button btn_play;
+//    @BindView(R.id.btn_game_creat)
+//    Button btn_creat;
+//
+//    @BindView(R.id.btn_dialogCancel) Button btnCancel;
+//
+//    @BindView(R.id.btn_dialog_search) Button btnSearch;
+//
+//    @BindView(R.id.edt_id)
+//    EditText edtIdEditText;
+//    @BindView(R.id.edt_password) EditText edtPass;
+
 
     private RoomContract.Presenter mPresenter = new RoomPresenter(this);   // Presenter
 
@@ -48,6 +67,28 @@ public class RoomFragment extends BaseFragment implements RoomContract.View {
     protected void btnPlay(){
         Fragment fragment = new StartFragment();
         replaceFragment(R.id.frameContainer, fragment);
+    }
+    @OnClick(R.id.btn_game_seach)
+    protected void btnSrarch(){
+        dialogSearch();
+    }
+    private void dialogSearch(){
+        Dialog dialog = new Dialog(getActivity(),R.style.Theme_AppCompat_DayNight_Dialog);
+        dialog.setContentView(R.layout.dialog_search_game);
+        dialog.show();
+
+    }
+
+    @OnClick(R.id.btn_game_creat)
+    protected void btnCreat(){
+        dialogCreat();
+    }
+
+    private void dialogCreat(){
+        Dialog dialog = new Dialog(getActivity(),R.style.Theme_AppCompat_DayNight_Dialog);
+        dialog.setContentView(R.layout.dialog_creat_game);
+        dialog.show();
+
     }
 
 }
