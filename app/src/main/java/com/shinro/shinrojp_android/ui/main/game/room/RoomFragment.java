@@ -27,21 +27,6 @@ import butterknife.OnClick;
 public class RoomFragment extends BaseFragment implements RoomContract.View {
     @BindView(R.id.view_page_room) ViewPager viewPager;
     @BindView(R.id.tabs) TabLayout tabs;
-//    @BindView(R.id.btn_game_seach)
-//    Button btn_search;
-//    @BindView(R.id.btn_game_play)
-//    Button btn_play;
-//    @BindView(R.id.btn_game_creat)
-//    Button btn_creat;
-//
-//    @BindView(R.id.btn_dialogCancel) Button btnCancel;
-//
-//    @BindView(R.id.btn_dialog_search) Button btnSearch;
-//
-//    @BindView(R.id.edt_id)
-//    EditText edtIdEditText;
-//    @BindView(R.id.edt_password) EditText edtPass;
-
 
     private RoomContract.Presenter mPresenter = new RoomPresenter(this);   // Presenter
 
