@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar_feed"
+    android:layout_height="?attr/actionBarSize"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:elevation="@dimen/elevation"
+    android:gravity="center_vertical"
+    app:navigationIcon="@drawable/ic_auth_back"
+    android:minHeight="?attr/actionBarSize"
+    app:theme="@style/Widget.MaterialComponents.ActionBar.Surface"
+    android:background="@color/colorPrimary" >
+
+    <ImageView
+        android:id="@+id/imvBack"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/image_description"
+        android:src="@drawable/ic_auth_back" />
+
+    <ImageView
+        android:id="@+id/imvReload"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/image_description"
+        android:src="@drawable/ic_feed_refresh" />
+
+</RelativeLayout>

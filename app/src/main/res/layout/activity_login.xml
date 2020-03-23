@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="@drawable/ic_auth_background">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imvBack"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_auth_back"
+                android:layout_margin="16dp"
+                android:contentDescription="@string/image_description" />
+
+            <com.shinro.shinrojp_android.views.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/auth_tv_login"
+                android:textSize="22sp"
+                android:textColor="#fff"
+                android:layout_marginStart="16dp"
+                android:layout_margin="16dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@drawable/ic_auth_signin"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="20"
+                app:hintEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:counterTextAppearance="@style/AuthTheme.CounterText"
+                app:hintTextAppearance="@style/AuthTheme.HintText"
+                app:counterOverflowTextAppearance="@style/AuthTheme.CounterTextOverFlowText"
+                app:errorTextAppearance="@style/AuthTheme.ErrorText">
+
+                <com.shinro.shinrojp_android.views.CustomEditText
+                    android:id="@+id/edtUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/auth_edt_username"
+                    android:textColor="@color/color_hint"
+                    android:layout_marginStart="36dp"
+                    android:inputType="text"
+                    android:background="#0000"
+                    android:padding="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:drawableStart="@drawable/ic_auth_user"
+                    android:drawablePadding="35dp"
+                    android:layout_marginEnd="36dp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="10"
+                app:passwordToggleEnabled="true"
+                app:hintEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:counterTextAppearance="@style/AuthTheme.CounterText"
+                app:hintTextAppearance="@style/AuthTheme.HintText"
+                app:counterOverflowTextAppearance="@style/AuthTheme.CounterTextOverFlowText"
+                app:errorTextAppearance="@style/AuthTheme.ErrorText">
+
+                <com.shinro.shinrojp_android.views.CustomEditText
+                    android:id="@+id/edtPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginEnd="36dp"
+                    android:background="#0000"
+                    android:drawableStart="@drawable/ic_auth_password"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:drawablePadding="38dp"
+                    android:hint="@string/auth_edt_password"
+                    android:inputType="textPassword"
+                    android:padding="16dp"
+                    android:textColor="@color/color_hint" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.shinro.shinrojp_android.views.CustomTextView
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_auth_rect"
+        android:text="@string/auth_tv_login"
+        android:textSize="20sp"
+        android:textColor="#3b4a45"
+        android:gravity="center"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:padding="13dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="18dp" />
+
+</RelativeLayout>
