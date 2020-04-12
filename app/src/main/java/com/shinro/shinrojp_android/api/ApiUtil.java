@@ -7,7 +7,7 @@ public class ApiUtil extends Constants {
     public static FeedService getFeedApiService(boolean isAuthorization, String token) {
         return RetrofitClient.getClient(BASE_URL_FEED, isAuthorization, token).create(FeedService.class);
     };
-    public static UserService registerAccount(boolean isAuthorization, String token) {
+    public static UserService userService(boolean isAuthorization, String token) {
         return RetrofitClient.getClient(BASE_URL_SV, isAuthorization, token).create(UserService.class);
     };
 

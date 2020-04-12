@@ -1,5 +1,17 @@
 package com.shinro.shinrojp_android.ui.auth.login;
 
+import com.shinro.shinrojp_android.api.ApiUtil;
+import com.shinro.shinrojp_android.models.ServerResponse;
+import com.shinro.shinrojp_android.utils.AppLogger;
+
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class LoginPresenter implements LoginContract.Presenter {
 
     private LoginContract.View mView;
@@ -10,6 +22,30 @@ public class LoginPresenter implements LoginContract.Presenter {
 
     @Override
     public void onLogin(String u, String p) {
-        mView.onLoginSuccess();
+        ApiUtil.userService(false, null).login(u, p)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Observer<Object>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(Object o) {
+                        mView.onLoginSuccess();
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        AppLogger.e(e);
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
     }
 }

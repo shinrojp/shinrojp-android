@@ -33,6 +33,7 @@ public class LenientTypeAdapterFactory implements TypeAdapterFactory {
                 } catch (Exception e) {
                     AppLogger.e("*** PARSE JSON ERROR *** - " + in + " in " + type);
                     in.skipValue();
+
                     return null;
                 }
             }

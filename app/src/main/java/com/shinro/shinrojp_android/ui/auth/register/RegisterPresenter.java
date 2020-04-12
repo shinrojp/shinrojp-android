@@ -20,7 +20,7 @@ public class RegisterPresenter implements RegisterContract.Presenter {
     @Override
     public void onRegister(String name, String email, String password, String repassword) {
         // mView.onRegisterSuccess();
-        ApiUtil.registerAccount(false, null).register(name, email, password, repassword)
+        ApiUtil.userService(false, null).register(name, email, password, repassword)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(new Observer<ServerResponse>() {
