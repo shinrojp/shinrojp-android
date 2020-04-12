@@ -18,6 +18,8 @@ public class Constants {
     //Retrofit
     public static final String BASE_URL_FEED = BuildConfig.BASE_URL;
 
+    public static final String BASE_URL_SV = BuildConfig.BASE_URL_SV; // server node js
+
     public static final String NHK_API_KEY = BuildConfig.NHK_API_KEY;
 
     //Api Option

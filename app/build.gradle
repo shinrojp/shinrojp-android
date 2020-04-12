@@ -19,6 +19,7 @@ android {
             shrinkResources false
             buildConfigField("String", "BASE_URL", BASE_URL)
             buildConfigField("String", "NHK_API_KEY", NHK_API_KEY)
+            buildConfigField("String", "BASE_URL_SV", BASE_URL_SV)
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
@@ -27,6 +28,7 @@ android {
             shrinkResources false
             buildConfigField("String", "BASE_URL", BASE_URL)
             buildConfigField("String", "NHK_API_KEY", NHK_API_KEY)
+            buildConfigField("String", "BASE_URL_SV", BASE_URL_SV)
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }

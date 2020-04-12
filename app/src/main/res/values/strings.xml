@@ -71,6 +71,7 @@
     <string name="auth_tv_login">Sign In</string>
     <string name="auth_tv_register">Sign Up</string>
     <string name="auth_edt_password">Password</string>
+    <string name="auth_re_edt_password">RePassword</string>
     <string name="auth_edt_username">Username</string>
     <string name="auth_edt_email">Email</string>
     <!--GameActivity-->
