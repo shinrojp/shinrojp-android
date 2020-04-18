@@ -81,7 +81,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View, V
 
     @Override
     public void onLoginFail() {
-
+        CommonUtils.showErrorToast(this, "Incorrect password/username.");
     }
 
 }

@@ -1,6 +1,7 @@
 package com.shinro.shinrojp_android.api;
 
 
+import com.shinro.shinrojp_android.models.LoginResponse;
 import com.shinro.shinrojp_android.models.ServerResponse;
 
 import io.reactivex.Observable;
@@ -22,8 +23,8 @@ public interface UserService {
     //Login
     @POST("/login")
     @FormUrlEncoded
-    Call login(@Field("login_username") String username,
-               @Field("login_password") String password
+    Observable<LoginResponse> login(@Field("login_username") String username,
+                                    @Field("login_password") String password
     );
 
 }
