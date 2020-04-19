@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,11 +14,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.shinro.shinrojp_android.R;
 import com.shinro.shinrojp_android.adapters.GrammarItemAdapter;
 import com.shinro.shinrojp_android.bases.BaseFragment;
+import com.shinro.shinrojp_android.helpers.database.DatabaseAccess;
+import com.shinro.shinrojp_android.models.Grammar.Example;
 import com.shinro.shinrojp_android.models.ItemGrammar;
-import com.shinro.shinrojp_android.ui.main.game.room.RoomFragment;
 import com.shinro.shinrojp_android.ui.main.grammar.detail.DetailFragment;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -40,11 +41,13 @@ public class GrammarFragment extends BaseFragment implements GrammarContract.Vie
         super.onViewCreated(view, savedInstanceState);
         initView(view);
         //test
+        List <Example> listExampleG = DatabaseAccess.getInstance(getContext()).getExample();
         ArrayList<ItemGrammar> itemGrammars = new ArrayList();
-        for (int i = 0; i < 30; i++) {
-            ItemGrammar grammar =new ItemGrammar ("a"+i,"ssds"+i);
+        for (Example ex:listExampleG) {
+            ItemGrammar grammar =new ItemGrammar (ex.getId().toString(),ex.getSentence());
             itemGrammars.add(grammar);
         }
+
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new GrammarItemAdapter(getContext(), itemGrammars);
         adapter.setClickListener(this);
