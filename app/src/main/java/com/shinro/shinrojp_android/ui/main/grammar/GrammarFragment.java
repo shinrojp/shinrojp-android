@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.shinro.shinrojp_android.R;
 import com.shinro.shinrojp_android.adapters.GrammarItemAdapter;
 import com.shinro.shinrojp_android.bases.BaseFragment;
-import com.shinro.shinrojp_android.helpers.database.DatabaseAccess;
+import com.shinro.shinrojp_android.helpers.SqlLiteDbHelper;
 import com.shinro.shinrojp_android.models.Grammar.Example;
 import com.shinro.shinrojp_android.models.ItemGrammar;
 import com.shinro.shinrojp_android.ui.main.grammar.detail.DetailFragment;
@@ -27,6 +27,9 @@ import butterknife.ButterKnife;
 
 public class GrammarFragment extends BaseFragment implements GrammarContract.View , GrammarItemAdapter.ItemClickListener {
     private GrammarItemAdapter adapter;
+    ArrayList<Example> examplesList;
+    SqlLiteDbHelper dbHelper;
+
     @BindView(R.id.rcv_grammer) RecyclerView recyclerView;
 
     private GrammarContract.Presenter mPresenter = new GrammarPresenter(this);   // Presenter
@@ -41,9 +44,12 @@ public class GrammarFragment extends BaseFragment implements GrammarContract.Vie
         super.onViewCreated(view, savedInstanceState);
         initView(view);
         //test
-        List <Example> listExampleG = DatabaseAccess.getInstance(getContext()).getExample();
+        examplesList = new ArrayList<>();
+        dbHelper = new SqlLiteDbHelper(getActivity());
+        dbHelper.openDataBase();
+        examplesList=dbHelper.getDetails();
         ArrayList<ItemGrammar> itemGrammars = new ArrayList();
-        for (Example ex:listExampleG) {
+        for (Example ex:examplesList) {
             ItemGrammar grammar =new ItemGrammar (ex.getId().toString(),ex.getSentence());
             itemGrammars.add(grammar);
         }
